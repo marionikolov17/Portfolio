@@ -14,6 +14,9 @@ export default {
         mainGreen: "2D5F5D"
       }
     },
+    fontFamily: {
+      montserrat: "'Montserrat', sans-serif"
+    }
   },
   plugins: [],
 }
