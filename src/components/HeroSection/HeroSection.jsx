@@ -15,13 +15,13 @@ export default function HeroSection() {
                     </div>
                     <div className="sm:grow"></div>
                 </header>
-                <div className="w-full flex p-6 max-h-max mt-10">
-                    <div className="grow shrink-0 flex justify-center items-center">
+                <div className="flex p-6 max-h-max mt-10 items-center">
+                    <div className="grow w-1/2 flex justify-center items-center p-6">
                         <div className="w-[300px] h-[300px] overflow-hidden rounded-full">
                             <img src="/images/mario.png" alt="" className="object-cover" />
                         </div>
                     </div>
-                    <div className="grow shrink flex-col items-center h-full">
+                    <div className="grow-0 shrink flex flex-col h-full p-6">
                         <h1 className="text-white text-6xl font-bold">Hi, I'm Mario Nikolov</h1>
                         <div className="flex">
                             <p className="text-white text-lg mt-1 underline underline-offset-8">Javascript Web Developer,</p>
@@ -32,6 +32,10 @@ export default function HeroSection() {
                             <a href="" className="text-2xl text-white me-4"><FaGithub /></a>
                             <a href="" className="text-2xl text-white me-4"><FaInstagram /></a>
                         </div>
+                        <p className="text-white mt-6 pe-14 max-w-[70%]">
+                            I am a developer with 2.5+ years of experience in developing web applications and interfaces.
+                            I am looking for opportunities to learn new skills and become a better version of myself.
+                        </p>
                     </div>
                 </div>
             </section>
