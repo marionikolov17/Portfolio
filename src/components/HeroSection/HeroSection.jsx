@@ -17,7 +17,7 @@ export default function HeroSection() {
                 </header>
                 <div className="flex p-6 max-h-max mt-10 items-center">
                     <div className="grow w-1/2 flex justify-center items-center p-6">
-                        <div className="w-[300px] h-[300px] overflow-hidden rounded-full">
+                        <div className="w-[300px] h-[300px] overflow-hidden rounded-full shadow-sm">
                             <img src="/images/mario.png" alt="" className="object-cover" />
                         </div>
                     </div>
@@ -36,6 +36,17 @@ export default function HeroSection() {
                             I am a developer with 2.5+ years of experience in developing web applications and interfaces.
                             I am looking for opportunities to learn new skills and become a better version of myself.
                         </p>
+                        <div className="flex mt-6">
+                            <button className="hero-section-button">
+                                Projects
+                            </button>
+                            <button className="hero-section-button">
+                                Certificates
+                            </button>
+                            <button className="hero-section-button">
+                                Contact
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
