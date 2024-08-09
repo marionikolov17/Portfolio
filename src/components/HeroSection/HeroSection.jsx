@@ -1,11 +1,28 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect, useState } from "react";
 import { FaAngular, FaLinkedin, FaNode } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { SiExpress, SiJavascript, SiReact, SiRedux, SiTailwindcss, SiTypescript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
+import { SiExpress, SiReact, SiRedux, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 export default function HeroSection() {
+    const [title, setTitle] = useState("");
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const finalTitle = "Hi, I'm Mario Nikolov";
+
+        if (index == finalTitle.length) return;
+        const timeout = setTimeout(() => {
+            setTitle(prevTitle => prevTitle + finalTitle[index]);
+            setIndex(prevIndex => prevIndex + 1);
+        }, 200)
+
+        return () => {
+            clearTimeout(timeout)
+        }
+    }, [index])
+
     return (
         <>
             <section className="block">
@@ -14,7 +31,7 @@ export default function HeroSection() {
                             <img src="/images/mario-2.png" alt="" className="w-[400px]" />
                     </div>
                     <div className="grow-0 w-1/2 shrink flex flex-col h-full p-6">
-                        <h1 className="text-6xl font-bold">Hi, I'm Mario Nikolov</h1>
+                        <h1 className="text-6xl font-bold title">{title}</h1>
                         <div className="flex">
                             <p className="text-lg mt-1 underline underline-offset-8">Javascript Web Developer,</p>
                             <p className="text-lg mt-1 ms-3">Creator of Zynkle</p>
