@@ -13,11 +13,11 @@ export default function HeroSection() {
         const finalTitle = "Hi, I'm Mario Nikolov";
 
         if (index == finalTitle.length) return;
-        
+
         const timeout = setTimeout(() => {
             setTitle(prevTitle => prevTitle + finalTitle[index]);
             setIndex(prevIndex => prevIndex + 1);
-        }, 200)
+        }, 300)
 
         return () => {
             clearTimeout(timeout)
@@ -29,7 +29,7 @@ export default function HeroSection() {
             <section className="block">
                 <div className="flex p-6 max-h-max mt-10 items-center">
                     <div className="grow flex justify-center items-center p-6">
-                            <img src="/images/mario-2.png" alt="" className="w-[400px]" />
+                            <img src="/images/mario-2.png" alt="" className="w-[350px]" />
                     </div>
                     <div className="grow-0 w-1/2 shrink flex flex-col h-full p-6">
                         <h1 className="text-6xl font-bold title">{title}</h1>

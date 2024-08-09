@@ -19,7 +19,7 @@
     height: 50px;
     margin-left: 5px;
     background-color: black;
-    animation: blink-caret .5s ease infinite;
+    animation: blink-caret .6s ease infinite;
   }
 
   @keyframes blink-caret {
