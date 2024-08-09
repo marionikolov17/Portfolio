@@ -13,6 +13,7 @@ export default function HeroSection() {
         const finalTitle = "Hi, I'm Mario Nikolov";
 
         if (index == finalTitle.length) return;
+        
         const timeout = setTimeout(() => {
             setTitle(prevTitle => prevTitle + finalTitle[index]);
             setIndex(prevIndex => prevIndex + 1);
