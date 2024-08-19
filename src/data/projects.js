@@ -5,7 +5,11 @@ export const projects = [
         name: "Zynkle",
         summary: "Incoming social media app, connecting people around the world.",
         githubUrl: "https://github.com/marionikolov17/Zynkle",
-        demoUrl: "https://zynkle-1-gsu7.onrender.com/"
+        demoUrl: "https://zynkle-1-gsu7.onrender.com/",
+        images: [
+            "/images/1.jpg",
+            "/images/123.png"
+        ]
     },
     /* {
         id: "2",
