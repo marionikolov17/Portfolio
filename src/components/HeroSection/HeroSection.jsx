@@ -35,7 +35,7 @@ export default function HeroSection() {
                         <h1 className="text-6xl font-bold title">{title}</h1>
                         <div className="flex">
                             <p className="text-lg mt-1 underline underline-offset-8">Javascript Web Developer,</p>
-                            <p className="text-lg mt-1 ms-3">Creator of Zynkle</p>
+                            <p className="text-lg mt-1 ms-3">Full-stack developer</p>
                         </div>
                         <div className="flex mt-6">
                             <a href="" className="text-2xl me-4"><FaLinkedin /></a>
