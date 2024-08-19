@@ -35,14 +35,14 @@ export default function DetailCard({ project }) {
                         <img src={project.images[currentImageIndex]} alt="" className="object-cover w-full h-full" />
 
                         <div className="w-full flex absolute bottom-0 py-2 justify-center items-center bg-white border-t">
-                            <FaCaretLeft className="cursor-pointer text-3xl" onClick={goPreviousImage}/>
+                            <FaCaretLeft className="cursor-pointer text-2xl" onClick={goPreviousImage}/>
                             {project.images.map((_, index) => {
                                 if (currentImageIndex == index) {
                                     return <div key={index} className="dot selected" onClick={() => selectImage(index)}></div>
                                 }
                                 return <div key={index} className="dot" onClick={() => selectImage(index)}></div>
                             })}
-                            <FaCaretRight className="cursor-pointer text-3xl" onClick={goNextImage}/>
+                            <FaCaretRight className="cursor-pointer text-2xl" onClick={goNextImage}/>
                         </div>
                     </div>
                     {/* Project README */}
