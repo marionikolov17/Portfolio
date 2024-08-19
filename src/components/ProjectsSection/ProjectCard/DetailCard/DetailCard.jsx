@@ -8,7 +8,7 @@ import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { MdDone, MdOutlineWebhook } from "react-icons/md";
 import { SiAxios, SiExpress, SiFirebase, SiMongodb, SiReact, SiRedux, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
-export default function DetailCard({ project }) {
+export default function DetailCard({ project, closeDetails }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const goPreviousImage = () => {
@@ -34,7 +34,10 @@ export default function DetailCard({ project }) {
     return (
         <>
             <section className="w-full min-h-screen max-h-max fixed project-background top-0 p-24 flex justify-center items-center">
-                <div className="w-full h-[700px] bg-white rounded-lg flex overflow-hidden">
+
+                <div className="z-0 w-full h-full absolute" onClick={closeDetails}></div>
+
+                <div className="w-full h-[700px] bg-white rounded-lg flex overflow-hidden z-50">
                     {/* Project images section */}
                     <div className="overflow-hidden grow shrink w-[80%] xl:w-[65%] 2xl:w-[40%] h-full flex items-center justify-center border-r relative">
                         <img src={project.images[currentImageIndex]} alt="" className="object-cover w-full h-full" />
