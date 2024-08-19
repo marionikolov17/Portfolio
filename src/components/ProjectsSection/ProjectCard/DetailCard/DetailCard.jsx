@@ -1,7 +1,12 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { FaGithub, FaNode } from "react-icons/fa";
 import { FaCaretLeft } from "react-icons/fa6";
 import { FaCaretRight } from "react-icons/fa6";
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
+import { MdDone, MdOutlineWebhook } from "react-icons/md";
+import { SiAxios, SiExpress, SiFirebase, SiMongodb, SiReact, SiRedux, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 export default function DetailCard({ project }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -28,10 +33,10 @@ export default function DetailCard({ project }) {
 
     return (
         <>
-            <section className="w-full min-h-full fixed project-background top-0 p-24 flex justify-center items-center">
-                <div className="w-full h-[700px] bg-white rounded-lg flex">
+            <section className="w-full min-h-screen max-h-max fixed project-background top-0 p-24 flex justify-center items-center">
+                <div className="w-full h-[700px] bg-white rounded-lg flex overflow-hidden">
                     {/* Project images section */}
-                    <div className="overflow-hidden grow-0 w-[40%] h-full flex items-center justify-center border-r relative">
+                    <div className="overflow-hidden grow shrink w-[80%] xl:w-[65%] 2xl:w-[40%] h-full flex items-center justify-center border-r relative">
                         <img src={project.images[currentImageIndex]} alt="" className="object-cover w-full h-full" />
 
                         <div className="w-full flex absolute bottom-0 py-2 justify-center items-center bg-white border-t">
@@ -46,8 +51,60 @@ export default function DetailCard({ project }) {
                         </div>
                     </div>
                     {/* Project README */}
-                    <div className="grow">
-
+                    <div className="grow w-[50%] block overflow-y-scroll overflow-x-hidden no-scrollbar p-6">
+                        <h1 className="text-3xl font-bold">Zynkle (Beta)</h1> {/* Title */}
+                        <div className="readme-border my-3"></div>
+                        <h3 className="text-lg font-bold">Incoming social media app, connecting people around the world.</h3> {/* Summary */}
+                        {/* Buttons */}
+                        <div className="flex mt-4">
+                            <button className="flex items-center border rounded-lg py-1.5 px-4 me-2">
+                                Github
+                                <FaGithub className="ms-2"/>
+                            </button>
+                            <button className="flex items-center border rounded-lg py-1.5 px-4">
+                                Demo
+                                <MdOutlineWebhook className="ms-2 text-xl"/>
+                            </button>
+                        </div>
+                        {/* Tech stack */}
+                        <h2 className="mt-4 text-2xl font-bold">Tech Stack</h2>
+                        <div className="border my-3"></div>
+                        <ul>
+                            <li className="my-3 flex items-center">
+                                <h4 className="text-lg">Front-End:</h4>
+                                <SiReact className="text-2xl mx-2"/>
+                                <SiVite className="text-2xl me-2"/>
+                                <SiRedux className="text-2xl me-2"/>
+                                <SiTailwindcss className="text-2xl me-2"/>
+                                <SiAxios className="text-2xl me-2"/>
+                            </li>
+                            <li className="my-3 flex items-center">
+                                <h4 className="text-lg">Back-End:</h4>
+                                <FaNode className="text-2xl mx-2"/>
+                                <SiExpress className="text-2xl me-2"/>
+                                <SiTypescript className="text-2xl me-2"/>
+                                <SiFirebase className="text-2xl me-2"/>
+                            </li>
+                            <li className="my-3 flex items-center">
+                                <h4 className="text-lg">Database:</h4>
+                                <SiMongodb className="text-2xl mx-2"/>
+                            </li>
+                        </ul>
+                        {/* Features */}
+                        <h2 className="mt-4 text-2xl font-bold">Features</h2>
+                        <div className="border my-3"></div>
+                        {/* Feature */}
+                        <div className="flex items-center my-2"> 
+                            <IoCheckmarkDoneCircle className="text-3xl"/>
+                            <p className="ms-1">User authentication that uses more complex authentication flow, in order to bring more security.</p>
+                        </div>
+                        {/* Skills */}
+                        <h2 className="mt-4 text-2xl font-bold">What I've learned</h2>
+                        <div className="border my-3"></div>
+                        <div className="flex items-center my-2"> 
+                            <MdDone className="text-3xl"/>
+                            <p className="ms-1">Polished my React skills.</p>
+                        </div>
                     </div>
                 </div>
             </section>
