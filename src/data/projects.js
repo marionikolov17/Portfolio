@@ -9,6 +9,23 @@ export const projects = [
         images: [
             "/images/1.jpg",
             "/images/123.png"
+        ],
+        tech: {
+            "Front-End": [
+                "react", "vite", "redux", "tailwind", "axios"
+            ],
+            "Back-End": [
+                "node", "express", "typescript", "firebase"
+            ],
+            "Database": [
+                "mongodb"
+            ]
+        },
+        features: [
+            "User authentication that uses more complex authentication flow, in order to bring more security."
+        ],
+        skills: [
+            "Polished my React skills."
         ]
     },
     /* {
