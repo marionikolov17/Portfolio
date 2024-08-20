@@ -3,7 +3,7 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 export default function ServiceCard() {
     return (
         <>
-            <div className="w-96 min-h-80 max-h-max border shadow-sm rounded-lg px-4 py-2 my-4">
+            <div className="w-80 sm:w-96 min-h-80 max-h-max border shadow-sm rounded-lg px-4 py-2 my-4">
                 <div className="w-full h-36 overflow-hidden flex justify-center items-center">
                     <img src="/images/web-app.png" alt="" className="w-20" />
                 </div>
