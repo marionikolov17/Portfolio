@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaCaretLeft } from "react-icons/fa6";
 import { FaCaretRight } from "react-icons/fa6";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
-import { MdDone, MdOutlineWebhook } from "react-icons/md";
+import { MdClose, MdDone, MdOutlineWebhook } from "react-icons/md";
 import { icons } from "../../../../data/icons";
 
 export default function DetailCard({ project, closeDetails }) {
@@ -33,15 +33,22 @@ export default function DetailCard({ project, closeDetails }) {
 
   return (
     <>
-      <section className="w-full min-h-screen max-h-max fixed project-background top-0 p-24 flex justify-center items-center">
+      <section className="w-full my-4 max-h-max sticky top-0 px-4 sm:px-12 xl:px-24 flex justify-center items-center">
         <div
           className="z-0 w-full h-full absolute"
           onClick={closeDetails}
         ></div>
 
-        <div className="w-full h-[700px] bg-white rounded-lg flex overflow-hidden z-50">
+        <div className="w-full sm:h-[700px] bg-white rounded-lg flex flex-col lg:flex-row overflow-auto z-50 border shadow-sm relative">
+          {/* Close button */}
+          <MdClose 
+           className="absolute right-0 top-0 m-4 text-2xl cursor-pointer z-50 lg:bg-transparent bg-white shadow-sm lg:shadow-none rounded-full"
+           onClick={closeDetails}
+           />
           {/* Project images section */}
-          <div className="overflow-hidden grow shrink w-[80%] xl:w-[65%] 2xl:w-[40%] h-full flex items-center justify-center border-r relative">
+          <div 
+          className="overflow-hidden lg:grow shrink w-full lg:w-[80%] xl:w-[65%] 2xl:w-[40%] h-[300px] sm:h-[500px] lg:h-full flex items-center justify-center border-r relative"
+            >
             <img
               src={project.images[currentImageIndex]}
               alt=""
@@ -78,7 +85,7 @@ export default function DetailCard({ project, closeDetails }) {
             </div>
           </div>
           {/* Project README */}
-          <div className="grow w-[50%] block overflow-y-scroll overflow-x-hidden no-scrollbar p-6">
+          <div className="grow w-full lg:w-[50%] block overflow-y-scroll overflow-x-hidden no-scrollbar p-6">
             <h1 className="text-3xl font-bold">{project.name}</h1> {/* Title */}
             <div className="readme-border my-3"></div>
             <h3 className="text-lg font-bold">
