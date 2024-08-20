@@ -32,6 +32,13 @@
     animation: blink-caret .6s ease infinite;
   }
 
+  @media screen and (max-width: 1024px) {
+    .title::after {
+      height: 25px;
+      margin-left: 3px;
+    }
+  }
+
   .project-background {
     background-color: rgba(0, 0, 0, 0.3);
   }
