@@ -124,7 +124,7 @@ export default function DetailCard({ project, closeDetails }) {
             {/* Feature */}
             {project.features.map((feature, index) => {
               return (
-                <div className="flex items-center my-2" key={index}>
+                <div className="flex items-center my-2 flex-wrap" key={index}>
                   <IoCheckmarkDoneCircle className="text-3xl" />
                   <p className="ms-1">{feature}</p>
                 </div>
