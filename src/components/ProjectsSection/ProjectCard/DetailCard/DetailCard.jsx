@@ -88,10 +88,12 @@ export default function DetailCard({ project, closeDetails }) {
                         <h2 className="mt-4 text-2xl font-bold">Features</h2>
                         <div className="border my-3"></div>
                         {/* Feature */}
-                        <div className="flex items-center my-2"> 
-                            <IoCheckmarkDoneCircle className="text-3xl"/>
-                            <p className="ms-1">User authentication that uses more complex authentication flow, in order to bring more security.</p>
-                        </div>
+                        {project.features.map((feature, index) => {
+                            return <div className="flex items-center my-2" key={index}> 
+                                        <IoCheckmarkDoneCircle className="text-3xl"/>
+                                        <p className="ms-1">{feature}</p>
+                                    </div>
+                        })}
                         {/* Skills */}
                         <h2 className="mt-4 text-2xl font-bold">What I've learned</h2>
                         <div className="border my-3"></div>
