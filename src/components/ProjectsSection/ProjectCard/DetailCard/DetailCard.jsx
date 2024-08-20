@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { FaGithub, FaNode } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FaCaretLeft } from "react-icons/fa6";
 import { FaCaretRight } from "react-icons/fa6";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { MdDone, MdOutlineWebhook } from "react-icons/md";
-import { SiAxios, SiExpress, SiFirebase, SiMongodb, SiReact, SiRedux, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { icons } from "../../../../data/icons";
 
 export default function DetailCard({ project, closeDetails }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -73,25 +73,16 @@ export default function DetailCard({ project, closeDetails }) {
                         <h2 className="mt-4 text-2xl font-bold">Tech Stack</h2>
                         <div className="border my-3"></div>
                         <ul>
-                            <li className="my-3 flex items-center">
-                                <h4 className="text-lg">Front-End:</h4>
-                                <SiReact className="text-2xl mx-2"/>
-                                <SiVite className="text-2xl me-2"/>
-                                <SiRedux className="text-2xl me-2"/>
-                                <SiTailwindcss className="text-2xl me-2"/>
-                                <SiAxios className="text-2xl me-2"/>
-                            </li>
-                            <li className="my-3 flex items-center">
-                                <h4 className="text-lg">Back-End:</h4>
-                                <FaNode className="text-2xl mx-2"/>
-                                <SiExpress className="text-2xl me-2"/>
-                                <SiTypescript className="text-2xl me-2"/>
-                                <SiFirebase className="text-2xl me-2"/>
-                            </li>
-                            <li className="my-3 flex items-center">
-                                <h4 className="text-lg">Database:</h4>
-                                <SiMongodb className="text-2xl mx-2"/>
-                            </li>
+                            {Object.keys(project.tech).map(techKey => {
+                                return (
+                                    <li className="my-3 flex items-center" key={techKey}>
+                                        <h4 className="text-lg">{techKey}:</h4>
+                                        {project.tech[techKey].map(icon => {
+                                            return icons[icon]
+                                        })}
+                                    </li>
+                                )
+                            })}
                         </ul>
                         {/* Features */}
                         <h2 className="mt-4 text-2xl font-bold">Features</h2>
