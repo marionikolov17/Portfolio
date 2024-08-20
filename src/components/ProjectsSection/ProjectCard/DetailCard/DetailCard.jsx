@@ -79,10 +79,10 @@ export default function DetailCard({ project, closeDetails }) {
           </div>
           {/* Project README */}
           <div className="grow w-[50%] block overflow-y-scroll overflow-x-hidden no-scrollbar p-6">
-            <h1 className="text-3xl font-bold">Zynkle (Beta)</h1> {/* Title */}
+            <h1 className="text-3xl font-bold">{project.name}</h1> {/* Title */}
             <div className="readme-border my-3"></div>
             <h3 className="text-lg font-bold">
-              Incoming social media app, connecting people around the world.
+              {project.summary}
             </h3>{" "}
             {/* Summary */}
             {/* Buttons */}
@@ -103,7 +103,7 @@ export default function DetailCard({ project, closeDetails }) {
               {Object.keys(project.tech).map((techKey) => {
                 return (
                   <li className="my-3 flex items-center" key={techKey}>
-                    <h4 className="text-lg">{techKey}:</h4>
+                    <h4 className="text-lg me-2">{techKey}:</h4>
                     {project.tech[techKey].map((icon) => {
                       return icons[icon];
                     })}

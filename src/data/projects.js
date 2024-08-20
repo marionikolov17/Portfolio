@@ -28,12 +28,33 @@ export const projects = [
             "Polished my React skills."
         ]
     },
-    /* {
+    {
         id: "2",
         imageUrl: "/images/fitness-manager-logo.jpg",
         name: "Fitness-Manager",
         summary: "Create your workout or choose the best one!",
         githubUrl: "https://github.com/MihaelPavlov/Fitness-Coaching-Manager",
-        demoUrl: ""
-    }, */
+        demoUrl: "",
+        images: [
+            "/images/1.jpg",
+            "/images/123.png"
+        ],
+        tech: {
+            "Front-End": [
+                "angular"
+            ],
+            "Back-End": [
+                "node", "express", "typescript", "knex"
+            ],
+            "Database": [
+                "mysql"
+            ]
+        },
+        features: [
+            "Fitness app features."
+        ],
+        skills: [
+            "Polished my Angular skills."
+        ]
+    },
 ]

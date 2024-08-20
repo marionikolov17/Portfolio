@@ -4,7 +4,9 @@ import {
   SiAxios,
   SiExpress,
   SiFirebase,
+  SiKnexdotjs,
   SiMongodb,
+  SiMysql,
   SiReact,
   SiRedux,
   SiTailwindcss,
@@ -26,4 +28,6 @@ export const icons = {
   firebase: <SiFirebase className={iconClassName} />,
   mongodb: <SiMongodb className={iconClassName} />,
   angular: <SiAngular className={iconClassName} />,
+  mysql: <SiMysql className={iconClassName} />,
+  knex: <SiKnexdotjs className={iconClassName} />,
 };
