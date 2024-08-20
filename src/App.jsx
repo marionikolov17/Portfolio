@@ -1,5 +1,6 @@
 import HeroSection from "./components/HeroSection/HeroSection"
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection"
+import ServicesSection from "./components/ServicesSection/ServicesSection"
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden">
         <HeroSection />
         <ProjectsSection />
+        <ServicesSection />
       </main>
     </>
   )
