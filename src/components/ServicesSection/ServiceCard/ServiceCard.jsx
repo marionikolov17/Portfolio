@@ -1,4 +1,5 @@
 import { MdOutlineWorkOutline } from "react-icons/md";
+import { IoIosDoneAll } from "react-icons/io";
 
 export default function ServiceCard() {
     return (
@@ -8,7 +9,15 @@ export default function ServiceCard() {
                     <img src="/images/web-app.png" alt="" className="w-20" />
                 </div>
                 <h3 className="text-center text-xl font-bold">Web Application</h3>
-                <p className="mt-4 text-justify">Building your desired web application, exactly the way you want! Let's start working together!</p>
+                {/* Benefits */}
+                <div className="flex items-center my-2">
+                    <IoIosDoneAll className="ms-4 text-3xl"/>
+                    <p className="ms-1">Building full-stack application</p>
+                </div>
+                <div className="flex items-center my-2">
+                    <IoIosDoneAll className="ms-4 text-3xl"/>
+                    <p className="ms-1">Fast delivery</p>
+                </div>
                 <div className="flex justify-center my-4">
                     <button className="flex items-center border rounded-lg py-2 px-4">
                         Apply now
