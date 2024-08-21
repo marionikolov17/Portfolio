@@ -1,3 +1,4 @@
+import { services } from "../../data/services";
 import ServiceCard from "./ServiceCard/ServiceCard";
 
 export default function ServicesSection() {
@@ -8,8 +9,7 @@ export default function ServicesSection() {
                     <h1 className="text-3xl sm:text-6xl font-bold">Services</h1>
                 </div>
                 <div className="grow w-full sm:w-auto flex flex-col justify-center items-center sm:items-start sm:px-0 px-4">
-                    <ServiceCard />
-                    <ServiceCard />
+                    {services.map(service => <ServiceCard key={service.id} service={service}/>)}
                 </div>
             </section>
         </>
