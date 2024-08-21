@@ -1,4 +1,5 @@
 import CareerSection from "./components/CareerSection/CareerSection"
+import ContactSection from "./components/ContactSection/ContactSection"
 import HeroSection from "./components/HeroSection/HeroSection"
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection"
 import ServicesSection from "./components/ServicesSection/ServicesSection"
@@ -13,6 +14,7 @@ function App() {
         <ServicesSection />
         <Testimonials />
         <CareerSection />
+        <ContactSection />
       </main>
     </>
   )
