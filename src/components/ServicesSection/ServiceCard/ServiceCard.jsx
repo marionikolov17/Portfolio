@@ -5,7 +5,7 @@ import { IoIosDoneAll } from "react-icons/io";
 export default function ServiceCard({ service }) {
   return (
     <>
-      <div className="w-80 sm:w-96 min-h-80 max-h-max border shadow-sm rounded-lg px-4 py-2 my-4">
+      <div className="w-80 sm:w-96 min-h-80 max-h-max border shadow-sm rounded-lg px-4 py-2 mt-4 sm:my-4">
         <div className="w-full h-36 overflow-hidden flex justify-center items-center">
           <img src={service.imageUrl} alt="" className="w-20" />
         </div>
