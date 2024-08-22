@@ -135,7 +135,7 @@ export default function DetailCard({ project, closeDetails }) {
             <div className="border my-3"></div>
             {project.skills.map((skill, index) => {
               return (
-                <div className="flex items-center my-2" key={index}>
+                <div className="flex flex-wrap items-center my-2" key={index}>
                   <MdDone className="text-3xl" />
                   <p className="ms-1">{skill}</p>
                 </div>
