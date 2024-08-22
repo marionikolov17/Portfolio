@@ -29,7 +29,7 @@ export default function ProjectCard({ project }) {
                 <div className="grow shrink-0">
                     <h2 className="mt-4 text-center font-bold text-xl">{project.name}</h2>
                     <p className="text-center px-4 text-sm mt-4">{project.summary}</p>
-                    <button className="flex items-center mx-auto mt-4 text-sm border rounded-lg py-2 px-4" onClick={openDetails}>
+                    <button className="flex items-center mx-auto mt-4 text-sm border rounded-lg py-2 px-4 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700" onClick={openDetails}>
                         See more 
                         <FaPlus className="ms-2"/>
                     </button>
