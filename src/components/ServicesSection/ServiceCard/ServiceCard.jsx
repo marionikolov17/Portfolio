@@ -20,7 +20,7 @@ export default function ServiceCard({ service }) {
           );
         })}
         <div className="flex justify-center my-4">
-          <button className="flex items-center border rounded-lg py-2 px-4">
+          <button className="flex items-center border rounded-lg py-2 px-4 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700">
             Apply now
             <MdOutlineWorkOutline className="ms-2" />
           </button>
