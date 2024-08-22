@@ -46,7 +46,7 @@ export default function ContactSection() {
                                 className="w-full min-h-32 border-0 rounded-sm ring-inset ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 placeholder:text-gray-400"
                             ></textarea>
                         </div>
-                        <button className="w-full flex justify-center items-center py-2 rounded-lg bg-blue-500 text-white">
+                        <button className="w-full flex justify-center items-center py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
                             Submit
                         </button>
                     </form>
