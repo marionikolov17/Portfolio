@@ -11,6 +11,14 @@ export default function ProjectCard({ project }) {
 
     const closeDetails = () => setIsDetailsOpened(false);
 
+    const goToGithub = () => {
+        window.location = project.githubUrl;
+    }
+
+    const goToDemo = () => {
+        window.location = project.demoUrl;
+    }
+
     return (
         <>
             {isDetailsOpened && <DetailCard project={project} closeDetails={closeDetails}/>}
@@ -27,11 +35,11 @@ export default function ProjectCard({ project }) {
                     </button>
                 </div>
                 <div className="grow shrink-1 flex border-t">
-                    <button className="w-1/2 flex items-center justify-center border-r text-base">
+                    <button className="w-1/2 flex items-center justify-center border-r text-base" onClick={goToGithub}>
                         Github
                         <FaGithub className="ms-2"/>
                     </button>
-                    <button className="w-1/2 flex items-center justify-center text-base">
+                    <button className="w-1/2 flex items-center justify-center text-base" onClick={goToDemo}>
                         Demo
                         <MdOutlineWebhook className="ms-2 text-xl"/>
                     </button>
