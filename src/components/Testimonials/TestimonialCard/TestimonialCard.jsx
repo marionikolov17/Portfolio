@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-export default function TestimonialCard() {
+export default function TestimonialCard({ testimonial, className }) {
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-800 mx-4">
+      <section className={"bg-gray-50 dark:bg-gray-800 mx-4 transition duration-500 ease-in" + className}>
         <div className="max-w-max-screen sm:w-[700px] px-4 py-8 mx-auto text-center lg:py-14 lg:px-6">
           <figure className="max-w-screen-md mx-auto">
             <svg
@@ -18,21 +19,21 @@ export default function TestimonialCard() {
             </svg>
             <blockquote>
               <p className="text-lg sm:text-xl font-medium text-gray-900 md:text-2xl dark:text-white">
-                "Mario is a great employee, and get everything done fast."
+                "{testimonial?.text}"
               </p>
             </blockquote>
             <figcaption className="flex items-center justify-center mt-6 space-x-3">
               <img
                 className="w-6 h-6 rounded-full"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+                src={testimonial?.authorImageUrl}
                 alt="profile picture"
               />
               <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
                 <div className="text-sm sm:text-base pr-3 font-medium text-gray-900 dark:text-white">
-                  Mario Nikolov
+                  {testimonial?.authorName}
                 </div>
                 <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-                  Senior Javascript Developer
+                  {testimonial?.authorJob}
                 </div>
               </div>
             </figcaption>
