@@ -94,11 +94,11 @@ export default function DetailCard({ project, closeDetails }) {
             {/* Summary */}
             {/* Buttons */}
             <div className="flex mt-4">
-              <button className="flex items-center border rounded-lg py-1.5 px-4 me-2">
+              <button className="flex items-center border rounded-lg py-1.5 px-4 me-2 hover:bg-gray-100">
                 Github
                 <FaGithub className="ms-2" />
               </button>
-              <button className="flex items-center border rounded-lg py-1.5 px-4">
+              <button className="flex items-center border rounded-lg py-1.5 px-4 hover:bg-gray-100">
                 Demo
                 <MdOutlineWebhook className="ms-2 text-xl" />
               </button>

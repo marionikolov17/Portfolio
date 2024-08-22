@@ -35,11 +35,11 @@ export default function ProjectCard({ project }) {
                     </button>
                 </div>
                 <div className="grow shrink-1 flex border-t">
-                    <button className="w-1/2 flex items-center justify-center border-r text-base" onClick={goToGithub}>
+                    <button className="w-1/2 flex items-center justify-center border-r text-base hover:bg-gray-100" onClick={goToGithub}>
                         Github
                         <FaGithub className="ms-2"/>
                     </button>
-                    <button className="w-1/2 flex items-center justify-center text-base" onClick={goToDemo}>
+                    <button className="w-1/2 flex items-center justify-center text-base hover:bg-gray-100" onClick={goToDemo}>
                         Demo
                         <MdOutlineWebhook className="ms-2 text-xl"/>
                     </button>
