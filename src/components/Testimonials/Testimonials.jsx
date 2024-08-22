@@ -21,12 +21,12 @@ export default function Testimonials() {
 
     return (
         <>
-            <section className="w-full sm:mt-12 sm:mb-6 min-h-96 flex items-center justify-center overflow-x-hidden overflow-y-hidden flex-wrap">
+            <section className="w-full sm:mt-12 sm:mb-6 min-h-96 flex items-center justify-center overflow-x-hidden overflow-y-hidden flex-wrap relative">
                 {testimonials.map((testimonial, index) => {
                     if (index == currentTestimonialIndex) {
                         return <TestimonialCard key={testimonial.id} testimonial={testimonial} className={""}/>
                     }
-                    return <TestimonialCard key={testimonial.id} testimonial={testimonial} className={" absolute opacity-0 bottom-0"}/>
+                    return <TestimonialCard key={testimonial.id} testimonial={testimonial} className={" absolute opacity-0 rotate-180"}/>
                 })}
             </section>
         </>
