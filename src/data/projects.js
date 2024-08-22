@@ -81,7 +81,18 @@ export const projects = [
             "Fitness app features."
         ],
         skills: [
-            "Polished my Angular skills."
+            "Learned how to work in team.",
+            "Learned how to contribute to github repository.",
+            "Learned how to do pull requests.",
+            "Commented on pull requests.",
+            "Approved pull requests.",
+            "Gained insights of how a real business project is built from scratch.",
+            "Polished my Angular skills.",
+            "Polished my Express.js skills.",
+            "Learned to use Typescript in Back-End.",
+            "Used relational database (MySql) instead of MongoDB",
+            "Custom implementaion of GraphQl",
+            "Knex.js"
         ]
     },
 ]
