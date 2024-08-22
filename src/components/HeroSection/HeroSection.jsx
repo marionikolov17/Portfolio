@@ -17,7 +17,7 @@ export default function HeroSection() {
         const timeout = setTimeout(() => {
             setTitle(prevTitle => prevTitle + finalTitle[index]);
             setIndex(prevIndex => prevIndex + 1);
-        }, 300)
+        }, 100)
 
         return () => {
             clearTimeout(timeout)
