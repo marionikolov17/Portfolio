@@ -4,7 +4,9 @@ export const services = [
         imageUrl: "/images/web-app.png",
         name: "Web Application",
         benefits: [
-            "Building full-stack application",
+            "Full-stack application",
+            "Secure application",
+            "Constant feedback",
             "Fast delivery"
         ]
     },
@@ -13,7 +15,8 @@ export const services = [
         imageUrl: "/images/internet.png",
         name: "Static Website",
         benefits: [
-            "Building full-stack application",
+            "Fast static website",
+            "Multiple pages",
             "Fast delivery"
         ]
     },
@@ -22,7 +25,9 @@ export const services = [
         imageUrl: "/images/api.png",
         name: "API Development",
         benefits: [
-            "Building full-stack application",
+            "Restful API",
+            "Secure endpoints",
+            "Clean architecture",
             "Fast delivery"
         ]
     },
