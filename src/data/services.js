@@ -17,6 +17,7 @@ export const services = [
         benefits: [
             "Fast static website",
             "Multiple pages",
+            "Fully-responsive design",
             "Fast delivery"
         ]
     },
