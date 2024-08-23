@@ -27,7 +27,6 @@ export default function ProjectCard({ project }) {
             <motion.div 
                 initial={{ opacity: 0, y: 75 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.8 }}
                 transition={{ duration: 0.5 }}
                 className="flex flex-col border h-[360px] w-80 rounded-md shadow-sm mx-4 my-4"
             >
