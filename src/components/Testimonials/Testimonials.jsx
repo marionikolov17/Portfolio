@@ -26,7 +26,7 @@ export default function Testimonials() {
                     if (index == currentTestimonialIndex) {
                         return <TestimonialCard key={testimonial.id} testimonial={testimonial} className={""}/>
                     }
-                    return <TestimonialCard key={testimonial.id} testimonial={testimonial} className={" absolute opacity-0 rotate-180"}/>
+                    return ""
                 })}
             </section>
         </>

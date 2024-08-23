@@ -1,10 +1,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
+import { motion } from "framer-motion";
+
 export default function TestimonialCard({ testimonial, className }) {
   return (
     <>
-      <section className={"bg-gray-50 dark:bg-gray-800 mx-4 transition duration-500 ease-in" + className}>
-        <div className="max-w-max-screen sm:w-[700px] px-4 py-8 mx-auto text-center lg:py-14 lg:px-6">
+      <section className={"bg-gray-50 dark:bg-gray-800 mx-4 transition duration-500 ease-in" + ""}>
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-max-screen sm:w-[700px] px-4 py-8 mx-auto text-center lg:py-14 lg:px-6"
+        >
           <figure className="max-w-screen-md mx-auto">
             <svg
               className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
@@ -38,7 +45,7 @@ export default function TestimonialCard({ testimonial, className }) {
               </div>
             </figcaption>
           </figure>
-        </div>
+        </motion.div>
       </section>
     </>
   );
