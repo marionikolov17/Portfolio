@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function DesktopNavigation() {
     const [offset, setOffset] = useState(0);
@@ -24,13 +25,23 @@ export default function DesktopNavigation() {
 
     return (
         <>
-        <section className="fixed left-0 min-h-screen z-40 hidden lg:flex items-center">
+        <motion.section 
+            initial={{ x: -100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.75 }}
+            className="fixed left-0 min-h-screen z-40 hidden lg:flex items-center"
+        >
             <nav className="bg-white w-[68px] shadow-md border flex flex-col items-center overflow-hidden">
-                <div className="mt-4 rounded-full border p-2 shadow-sm cursor-pointer" onClick={scrollToTop}>
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.25, delay: 0.75 }}
+                    className="mt-4 rounded-full border p-2 shadow-sm cursor-pointer" onClick={scrollToTop}
+                >
                     <h3 className="flex items-end text-lg font-bold">M
                         <div className="w-2 h-2 bg-green-500 rounded-full mb-1"></div>
                     </h3>
-                </div>
+                </motion.div>
                 <div 
                     className={
                         offset > 150 && offset < 900 ?
@@ -69,7 +80,7 @@ export default function DesktopNavigation() {
                     <a href="#contact" className="text-lg font-normal inline-block rotate-90">Contact</a>
                 </div>
             </nav>
-        </section>
+        </motion.section>
         </>
     )
 }
