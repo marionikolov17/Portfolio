@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <>
-            <footer className="w-full bg-black max-h-max mt-12 py-3 flex flex-col items-center">
+            <footer className="z-50 w-full bg-black max-h-max mt-12 py-3 flex flex-col items-center">
                 <a 
                     href="https://www.flaticon.com/free-icons/api" 
                     className="text-white text-center text-base sm:text-xl font-medium" 
