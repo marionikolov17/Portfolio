@@ -1,5 +1,6 @@
 import CareerSection from "./components/CareerSection/CareerSection"
 import ContactSection from "./components/ContactSection/ContactSection"
+import DesktopNavigation from "./components/DesktopNavigation/DesktopNavigation"
 import Footer from "./components/Footer/Footer"
 import HeroSection from "./components/HeroSection/HeroSection"
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection"
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden">
+        <DesktopNavigation />
         <HeroSection />
         <ProjectsSection />
         <ServicesSection />
