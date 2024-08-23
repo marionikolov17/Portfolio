@@ -1,18 +1,39 @@
+/* eslint-disable react/no-unescaped-entities */
+import { motion } from "framer-motion";
 import { MdDone } from "react-icons/md";
 
-/* eslint-disable react/no-unescaped-entities */
 export default function CareerSection() {
   return (
     <>
       <section id="career" className="w-full sm:mt-10 block mb-8">
-        <h1 className="text-center text-3xl sm:text-6xl font-bold">
+        <motion.h1 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-3xl sm:text-6xl font-bold"
+        >
           My Career
-        </h1>
-        <p className="text-center text-slate-400 text-lg">So far...</p>
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-slate-400 text-lg"
+        >So far...</motion.p>
         <div className="flex justify-center px-4 mt-8">
           <ol className="relative border-s border-gray-200 dark:border-gray-700 max-w-[800px]">
-            <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <motion.li 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75 }}
+              className="mb-10 ms-4"
+            >
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+              ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 Sometime in 2020
               </time>
@@ -23,9 +44,19 @@ export default function CareerSection() {
                 My programming journey started in the early 2020, when I first started learning HTML and CSS
                 and experimented with different interfaces.
               </p>
-            </li>
-            <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            </motion.li>
+            <motion.li 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75 }}
+              className="mb-10 ms-4"
+            >
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+              ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 Early 2021
               </time>
@@ -55,9 +86,19 @@ export default function CareerSection() {
                 <MdDone className="me-2 text-green-600"/>
                 <p>The exsistence of powerful frameworks and libraries for Front-end development.</p>
               </div>
-            </li>
-            <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            </motion.li>
+            <motion.li 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75 }}
+              className="mb-10 ms-4"
+            >
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+              ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 2022
               </time>
@@ -69,9 +110,19 @@ export default function CareerSection() {
                 Game Development, Desktop App Development, Machine Learning and AI, Mobile Development, etc.
                 And I have found that I love Web Development the most. ❤️
               </p>
-            </li>
-            <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            </motion.li>
+            <motion.li 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75 }}
+              className="mb-10 ms-4"
+            >
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+              ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 January 2023
               </time>
@@ -82,9 +133,19 @@ export default function CareerSection() {
                 I have felt that I have missed some important concepts during self-learning Javascript,
                 so I needed some guidance and I wanted to see how programming is studied in my country.
               </p>
-            </li>
-            <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            </motion.li>
+            <motion.li 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75 }}
+              className="mb-10 ms-4"
+            >
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+              ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 May 2024
               </time>
@@ -92,12 +153,22 @@ export default function CareerSection() {
                 Joined the "Intern and Tech Lead Academy 2"
               </h3>
               <p className="text-base font-normal text-gray-500">
-                I joined this academy in order to gain real insights on how a day of work of a software developer looks like
+                I joined this academy in order to gain real insights on how a day of work of a software developer looks motion.like
                 and to see how a real business project/product is built from scratch and to gain more experience.
               </p>
-            </li>
-            <li className="ms-4">
-              <div className="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            </motion.li>
+            <motion.li 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75 }}
+              className="ms-4"
+            >
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+              ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-green-600">
                 August 2024
               </time>
@@ -113,7 +184,7 @@ export default function CareerSection() {
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
               </button>
-            </li>
+            </motion.li>
           </ol>
         </div>
       </section>
