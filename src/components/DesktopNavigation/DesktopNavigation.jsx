@@ -41,27 +41,27 @@ export default function DesktopNavigation() {
                 <div 
                     className={
                         offset > 150 && offset < 900 ?
-                        "w-full min-h-28 py-6 flex justify-center items-center mt-6 border-r-4 border-r-green-500 bg-gray-100"
+                        "w-full transition min-h-28 py-6 flex justify-center items-center mt-6 border-r-4 border-r-green-500 bg-gray-100"
                         :
-                        "w-full min-h-28 py-6 flex justify-center items-center mt-6 hover:bg-gray-100"
+                        "w-full transition min-h-28 py-6 flex justify-center items-center mt-6 hover:bg-gray-100"
                     }
                 >
                     <a href="#projects" className="text-lg font-normal inline-block rotate-90">Projects</a>
                 </div>
                 <div className={
                     offset > 900 && offset < 2200 ?
-                    "w-full min-h-28 py-6 flex justify-center items-center border-r-4 border-r-green-500 bg-gray-100"
+                    "w-full transition min-h-28 py-6 flex justify-center items-center border-r-4 border-r-green-500 bg-gray-100"
                     :
-                    "w-full min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
+                    "w-full transition min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
                     }
                 >
                     <a href="#services" className="text-lg font-normal inline-block rotate-90">Services</a>
                 </div>
                 <div className={
                     offset > 2700 && offset < 3700 ?
-                    "w-full min-h-28 py-6 flex justify-center items-center border-r-4 border-r-green-500 bg-gray-100"
+                    "w-full transition min-h-28 py-6 flex justify-center items-center border-r-4 border-r-green-500 bg-gray-100"
                     :
-                    "w-full min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
+                    "w-full transition min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
                     }
                 >
                     <a href="#career" className="text-lg font-normal inline-block rotate-90">Career</a>
