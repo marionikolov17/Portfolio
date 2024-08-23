@@ -5,7 +5,7 @@ import { MdOutlineContentPaste, MdOutlineEmail, MdOutlinePhone, MdOutlineSubject
 export default function ContactSection() {
     return (
         <>
-            <section className="w-full flex flex-col-reverse sm:flex-row mt-10 sm:mt-24 mb-8">
+            <section id="contact" className="w-full flex flex-col-reverse sm:flex-row mt-10 sm:mt-24 mb-8">
                 <div className="grow w-full sm:w-1/2 flex justify-end px-6 lg:px-24">
                     <form className="block w-full lg:w-96">
                         <div className="mt-4 mb-6">

@@ -4,7 +4,7 @@ import { MdDone } from "react-icons/md";
 export default function CareerSection() {
   return (
     <>
-      <section className="w-full sm:mt-10 block mb-8">
+      <section id="career" className="w-full sm:mt-10 block mb-8">
         <h1 className="text-center text-3xl sm:text-6xl font-bold">
           My Career
         </h1>

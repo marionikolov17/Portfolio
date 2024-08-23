@@ -4,7 +4,7 @@ import ServiceCard from "./ServiceCard/ServiceCard";
 export default function ServicesSection() {
     return (
         <>
-            <section className="w-full flex flex-col sm:flex-row mt-12 sm:min-h-[500px] max-h-max">
+            <section id="services" className="w-full flex flex-col sm:flex-row mt-12 sm:min-h-[500px] max-h-max">
                 <div className="shrink w-full sm:w-1/2 grow-0 flex justify-center items-center">
                     <h1 className="text-3xl sm:text-6xl font-bold">Services</h1>
                 </div>
