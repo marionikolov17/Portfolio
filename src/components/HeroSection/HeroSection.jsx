@@ -4,6 +4,7 @@ import { FaAngular, FaLinkedin, FaNode } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { SiExpress, SiReact, SiRedux, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
     const [title, setTitle] = useState("");
@@ -29,9 +30,18 @@ export default function HeroSection() {
             <section className="block">
                 <div className="flex lg:flex-row flex-col lg:p-6 max-h-max lg:mt-10 items-center">
                     <div className="grow flex justify-center items-center p-2 lg:p-6">
-                            <img src="/images/mario-2.png" alt="" className="w-[200px] lg:w-[350px]" />
+                            <img 
+                                src="/images/mario-2.png" 
+                                alt="" 
+                                className="w-[200px] lg:w-[350px]" 
+                            />
                     </div>
-                    <div className="grow-0 w-full lg:w-1/2 shrink flex flex-col h-full p-2 lg:p-6">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 75 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.75 }}
+                        className="grow-0 w-full lg:w-1/2 shrink flex flex-col h-full p-2 lg:p-6"
+                    >
                         <h1 className="text-2xl lg:text-6xl font-bold title text-center lg:text-start">{title}</h1>
                         <div className="flex lg:flex-row flex-col">
                             <p className="text-lg mt-1 underline underline-offset-8 text-center lg:text-start">Javascript Web Developer,</p>
@@ -55,7 +65,7 @@ export default function HeroSection() {
                             <SiTypescript className="text-4xl lg:text-6xl text-[#007acc] me-6"/>
                             <SiTailwindcss className="text-4xl lg:text-6xl text-[#06b6d4] me-6"/>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </>
