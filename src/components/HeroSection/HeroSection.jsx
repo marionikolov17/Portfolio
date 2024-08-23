@@ -38,7 +38,7 @@ export default function HeroSection() {
                     </div>
                     <motion.div 
                         initial={{ opacity: 0, y: 75 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.75 }}
                         className="grow-0 w-full lg:w-1/2 shrink flex flex-col h-full p-2 lg:p-6"
                     >
