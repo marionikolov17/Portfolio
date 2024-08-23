@@ -11,7 +11,6 @@ export default function DesktopNavigation() {
 
     useEffect(() => {
         const onScroll = () => {
-            console.log(window.scrollY);
             setOffset(window.scrollY);
         }
 
