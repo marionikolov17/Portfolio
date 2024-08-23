@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { FaPlus, FaGithub } from "react-icons/fa";
 import { MdOutlineWebhook } from "react-icons/md";
+import { motion } from "framer-motion";
 import DetailCard from "./DetailCard/DetailCard";
-import { useState } from "react";
 
 export default function ProjectCard({ project }) {
     const [isDetailsOpened, setIsDetailsOpened] = useState(false);
@@ -22,7 +23,14 @@ export default function ProjectCard({ project }) {
     return (
         <>
             {isDetailsOpened && <DetailCard project={project} closeDetails={closeDetails}/>}
-            {!isDetailsOpened && <div className="flex flex-col border h-[360px] w-80 rounded-md shadow-sm mx-4 my-4">
+            {!isDetailsOpened && 
+            <motion.div 
+                initial={{ opacity: 0, y: 75 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.8 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col border h-[360px] w-80 rounded-md shadow-sm mx-4 my-4"
+            >
                 <div className="w-full overflow-hidden flex justify-center items-center h-28 border-b">
                     <img src={project.imageUrl} alt="" />
                 </div>
@@ -44,7 +52,7 @@ export default function ProjectCard({ project }) {
                         <MdOutlineWebhook className="ms-2 text-xl"/>
                     </button>
                 </div>
-            </div>}
+            </motion.div>}
         </>
     )
 }
