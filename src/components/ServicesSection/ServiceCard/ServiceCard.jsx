@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { IoIosDoneAll } from "react-icons/io";
+import Toast from "../../Toast/Toast";
 
 export default function ServiceCard({ service }) {
+  const [message, setMessage] = useState("");
+
   return (
     <>
+      <Toast message={message} setMessage={setMessage}/>
       <motion.div 
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
@@ -26,7 +31,9 @@ export default function ServiceCard({ service }) {
           );
         })}
         <div className="flex justify-center my-4">
-          <button className="flex items-center border rounded-lg py-2 px-4 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700">
+          <button 
+          onClick={() => setMessage("Please contact me through my socials, for now.")}
+          className="flex items-center border rounded-lg py-2 px-4 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700">
             Apply now
             <MdOutlineWorkOutline className="ms-2" />
           </button>
