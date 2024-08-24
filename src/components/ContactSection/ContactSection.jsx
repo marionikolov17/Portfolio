@@ -13,7 +13,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.75 }}
                     className="grow w-full sm:w-1/2 flex justify-end px-6 lg:px-24"
                 >
-                    <form className="block w-full lg:w-96">
+                    <form action="mailto:marionikolovdev@gmail.com" method="post" className="block w-full lg:w-96">
                         <div className="mt-4 mb-6">
                             <label htmlFor="email" className="flex items-center font-medium mb-1">
                                 Your email
