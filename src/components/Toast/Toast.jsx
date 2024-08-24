@@ -9,7 +9,7 @@ export default function Toast({ message, setMessage }) {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="fixed bottom-0 w-full flex justify-center mb-4 z-40"
+          className="fixed bottom-0 left-0 w-full flex justify-center mb-4 z-40"
         >
           <div
             id="toast-default"
