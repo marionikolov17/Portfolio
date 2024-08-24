@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { motion } from "framer-motion";
 import { CiLinkedin } from "react-icons/ci";
 import { MdOutlineContentPaste, MdOutlineEmail, MdOutlinePhone, MdOutlineSubject } from "react-icons/md";
 
@@ -6,7 +7,12 @@ export default function ContactSection() {
     return (
         <>
             <section id="contact" className="w-full flex flex-col-reverse sm:flex-row mt-10 sm:mt-24 mb-8">
-                <div className="grow w-full sm:w-1/2 flex justify-end px-6 lg:px-24">
+                <motion.div 
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.75 }}
+                    className="grow w-full sm:w-1/2 flex justify-end px-6 lg:px-24"
+                >
                     <form className="block w-full lg:w-96">
                         <div className="mt-4 mb-6">
                             <label htmlFor="email" className="flex items-center font-medium mb-1">
@@ -50,8 +56,13 @@ export default function ContactSection() {
                             Submit
                         </button>
                     </form>
-                </div>
-                <div className="grow-0 w-full sm:w-1/2 block px-6">
+                </motion.div>
+                <motion.div 
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.75 }}
+                    className="grow-0 w-full sm:w-1/2 block px-6"
+                >
                     <h2 className="text-3xl sm:text-6xl font-bold">Let's get in touch!</h2>
                     <p className="flex items-center mt-4">
                         <MdOutlineEmail className="me-2 text-xl"/>
@@ -65,7 +76,7 @@ export default function ContactSection() {
                         <MdOutlinePhone className="me-2 text-xl"/>
                         +359884640709
                     </p>
-                </div>
+                </motion.div>
             </section>
         </>
     )
