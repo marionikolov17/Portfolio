@@ -1,8 +1,21 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 
 export default function MobileNavigation() {
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  useEffect(() => {
+    const hideMenu = () => setIsMenuVisible(false);
+
+    window.addEventListener("scroll", hideMenu);
+
+    return () => {
+        window.removeEventListener("scroll", hideMenu);
+    }
+  }, [])
+
   return (
     <>
       <section className="lg:hidden flex items-center h-16 mb-2">
@@ -14,22 +27,24 @@ export default function MobileNavigation() {
             </div>
         </div>
         <div className="grow flex justify-end pe-6">
-            <CiMenuFries className="text-3xl"/>
+            <CiMenuFries className="text-3xl" onClick={() => setIsMenuVisible(true)}/>
         </div>
 
         {/* Actual Menu */}
+        {isMenuVisible && 
         <motion.div 
-            initial={{ x: -1000 }}
-            whileInView={{ x: 0 }}
-            transition={{ duration: 1 }}
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.7 }}
             className="fixed top-0 w-full h-screen bg-white z-50 flex flex-col items-center justify-center"
         >
-            <IoMdClose className="text-4xl absolute top-0 right-0 m-4 cursor-pointer"/>
+            <IoMdClose className="text-4xl absolute top-0 right-0 m-4 cursor-pointer" onClick={() => setIsMenuVisible(false)}/>
+            <div className="absolute z-10 w-full h-full" onClick={() => setIsMenuVisible(false)}></div>
             <motion.button 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-gray-900 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
+                className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Projects
             </motion.button>
@@ -37,7 +52,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-gray-900 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
+                className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Services
             </motion.button>
@@ -45,7 +60,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
-                className="text-gray-900 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
+                className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Career
             </motion.button>
@@ -53,11 +68,11 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.5 }}
-                className="text-gray-900 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
+                className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Contact
             </motion.button>
-        </motion.div>
+        </motion.div>}
       </section>
     </>
   );
