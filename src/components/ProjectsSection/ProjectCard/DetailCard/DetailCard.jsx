@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaCaretLeft } from "react-icons/fa6";
 import { FaCaretRight } from "react-icons/fa6";
@@ -50,7 +51,12 @@ export default function DetailCard({ project, closeDetails }) {
   return (
     <>
       <Toast message={message} setMessage={setMessage}/>
-      <section className="w-full my-4 max-h-max sticky top-0 px-4 sm:px-12 xl:px-24 flex justify-center items-center">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.75 }}
+        className="w-full my-4 max-h-max sticky top-0 px-4 sm:px-12 xl:px-24 flex justify-center items-center"
+      >
         <div
           className="z-0 w-full h-full absolute"
           onClick={closeDetails}
@@ -156,7 +162,7 @@ export default function DetailCard({ project, closeDetails }) {
             })}
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
