@@ -20,15 +20,25 @@ export default function MobileNavigation() {
     <>
       <section className="lg:hidden flex items-center h-16 mb-2">
         <div className="grow flex justify-start ps-6">
-            <div className="mt-4 rounded-full border p-2 shadow-sm cursor-pointer">
-            <h3 className="flex items-end text-lg font-bold">
-                M<div className="w-2 h-2 bg-green-500 rounded-full mb-1"></div>
-            </h3>
-            </div>
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="mt-4 rounded-full border p-2 shadow-sm cursor-pointer"
+            >
+                <h3 className="flex items-end text-lg font-bold">
+                    M<div className="w-2 h-2 bg-green-500 rounded-full mb-1"></div>
+                </h3>
+            </motion.div>
         </div>
-        <div className="grow flex justify-end pe-6">
+        <motion.div 
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="grow flex justify-end pe-6"
+        >
             <CiMenuFries className="text-3xl" onClick={() => setIsMenuVisible(true)}/>
-        </div>
+        </motion.div>
 
         {/* Actual Menu */}
         {isMenuVisible && 
