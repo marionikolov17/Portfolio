@@ -30,7 +30,10 @@ export default function HeroSection() {
             <section className="block">
                 <div className="flex lg:flex-row flex-col lg:p-6 max-h-max lg:mt-10 items-center">
                     <div className="grow flex justify-center items-center p-2 lg:p-6">
-                            <img 
+                            <motion.img 
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ duration: 0.75 }}
                                 src="/images/mario-2.png" 
                                 alt="" 
                                 className="w-[200px] lg:w-[350px]" 
