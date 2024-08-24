@@ -4,24 +4,33 @@ import { FaPlus, FaGithub } from "react-icons/fa";
 import { MdOutlineWebhook } from "react-icons/md";
 import { motion } from "framer-motion";
 import DetailCard from "./DetailCard/DetailCard";
+import Toast from "../../Toast/Toast";
 
 export default function ProjectCard({ project }) {
     const [isDetailsOpened, setIsDetailsOpened] = useState(false);
+    const [message, setMessage] = useState("")
 
     const openDetails = () => setIsDetailsOpened(true);
 
     const closeDetails = () => setIsDetailsOpened(false);
 
     const goToGithub = () => {
+        if (project.githubUrl == "") {
+            return setMessage("This is private repository.")
+        }
         window.location = project.githubUrl;
     }
 
     const goToDemo = () => {
+        if (project.demoUrl == "") {
+            return setMessage("This project is not deployed, yet.")
+        }
         window.location = project.demoUrl;
     }
 
     return (
         <>
+            <Toast message={message} setMessage={setMessage}/>
             {isDetailsOpened && <DetailCard project={project} closeDetails={closeDetails}/>}
             {!isDetailsOpened && 
             <motion.div 
