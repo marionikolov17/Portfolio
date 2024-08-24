@@ -21,8 +21,8 @@ export default function MobileNavigation() {
       <section className="lg:hidden flex items-center h-16 mb-2">
         <div className="grow flex justify-start ps-6">
             <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 className="mt-4 rounded-full border p-2 shadow-sm cursor-pointer"
             >
