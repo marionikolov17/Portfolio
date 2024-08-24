@@ -7,9 +7,11 @@ import { FaCaretRight } from "react-icons/fa6";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { MdClose, MdDone, MdOutlineWebhook } from "react-icons/md";
 import { icons } from "../../../../data/icons";
+import Toast from "../../../Toast/Toast";
 
 export default function DetailCard({ project, closeDetails }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [message, setMessage] = useState("");
 
   const goPreviousImage = () => {
     if (currentImageIndex == 0) {
@@ -31,8 +33,23 @@ export default function DetailCard({ project, closeDetails }) {
     setCurrentImageIndex(index);
   };
 
+  const goToGithub = () => {
+    if (project.githubUrl == "") {
+      return setMessage("This is private repository.");
+    }
+    window.location = project.githubUrl;
+  };
+
+  const goToDemo = () => {
+    if (project.demoUrl == "") {
+      return setMessage("This project is not deployed, yet.");
+    }
+    window.location = project.demoUrl;
+  };
+
   return (
     <>
+      <Toast message={message} setMessage={setMessage}/>
       <section className="w-full my-4 max-h-max sticky top-0 px-4 sm:px-12 xl:px-24 flex justify-center items-center">
         <div
           className="z-0 w-full h-full absolute"
@@ -41,14 +58,12 @@ export default function DetailCard({ project, closeDetails }) {
 
         <div className="w-full sm:h-[700px] bg-white rounded-lg flex flex-col lg:flex-row overflow-auto z-50 border shadow-sm relative">
           {/* Close button */}
-          <MdClose 
-           className="absolute right-0 top-0 m-4 text-2xl cursor-pointer z-50 lg:bg-transparent bg-white shadow-sm lg:shadow-none rounded-full"
-           onClick={closeDetails}
-           />
+          <MdClose
+            className="absolute right-0 top-0 m-4 text-2xl cursor-pointer z-50 lg:bg-transparent bg-white shadow-sm lg:shadow-none rounded-full"
+            onClick={closeDetails}
+          />
           {/* Project images section */}
-          <div 
-          className="overflow-hidden lg:grow shrink w-full lg:w-[80%] xl:w-[65%] 2xl:w-[40%] h-[300px] sm:h-[500px] lg:h-full flex items-center justify-center border-r relative"
-            >
+          <div className="overflow-hidden lg:grow shrink w-full lg:w-[80%] xl:w-[65%] 2xl:w-[40%] h-[300px] sm:h-[500px] lg:h-full flex items-center justify-center border-r relative">
             <img
               src={project.images[currentImageIndex]}
               alt=""
@@ -88,17 +103,15 @@ export default function DetailCard({ project, closeDetails }) {
           <div className="grow w-full lg:w-[50%] block overflow-y-scroll overflow-x-hidden no-scrollbar p-6">
             <h1 className="text-3xl font-bold">{project.name}</h1> {/* Title */}
             <div className="readme-border my-3"></div>
-            <h3 className="text-lg font-bold">
-              {project.summary}
-            </h3>{" "}
+            <h3 className="text-lg font-bold">{project.summary}</h3>{" "}
             {/* Summary */}
             {/* Buttons */}
             <div className="flex mt-4">
-              <button className="flex items-center border rounded-lg py-1.5 px-4 me-2 hover:bg-gray-100">
+              <button onClick={goToGithub} className="flex items-center border rounded-lg py-1.5 px-4 me-2 hover:bg-gray-100">
                 Github
                 <FaGithub className="ms-2" />
               </button>
-              <button className="flex items-center border rounded-lg py-1.5 px-4 hover:bg-gray-100">
+              <button onClick={goToDemo} className="flex items-center border rounded-lg py-1.5 px-4 hover:bg-gray-100">
                 Demo
                 <MdOutlineWebhook className="ms-2 text-xl" />
               </button>
