@@ -1,9 +1,16 @@
 /* eslint-disable react/prop-types */
+import { motion } from "framer-motion";
+
 export default function Toast({ message, setMessage }) {
   return (
     <>
       {message != "" && (
-        <div className="fixed bottom-0 w-full flex justify-center mb-4 z-40">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75 }}
+          className="fixed bottom-0 w-full flex justify-center mb-4 z-40"
+        >
           <div
             id="toast-default"
             className="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow"
@@ -53,7 +60,7 @@ export default function Toast({ message, setMessage }) {
               </svg>
             </button>
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
