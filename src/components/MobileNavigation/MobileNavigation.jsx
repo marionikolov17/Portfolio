@@ -18,7 +18,12 @@ export default function MobileNavigation() {
         </div>
 
         {/* Actual Menu */}
-        <div className="fixed top-0 w-full h-screen bg-white z-50 flex flex-col items-center justify-center">
+        <motion.div 
+            initial={{ x: -1000 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 1 }}
+            className="fixed top-0 w-full h-screen bg-white z-50 flex flex-col items-center justify-center"
+        >
             <IoMdClose className="text-4xl absolute top-0 right-0 m-4 cursor-pointer"/>
             <motion.button 
                 initial={{ opacity: 0 }}
@@ -52,7 +57,7 @@ export default function MobileNavigation() {
             >
                 Contact
             </motion.button>
-        </div>
+        </motion.div>
       </section>
     </>
   );
