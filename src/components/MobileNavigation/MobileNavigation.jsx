@@ -14,7 +14,11 @@ export default function MobileNavigation() {
     return () => {
         window.removeEventListener("scroll", hideMenu);
     }
-  }, [])
+  }, []);
+
+  const onLinkClicked = (section) => {
+    window.location.href = window.location.origin + section;
+  }
 
   return (
     <>
@@ -54,6 +58,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
+                onClick={() => onLinkClicked("#projects")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Projects
@@ -62,6 +67,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
+                onClick={() => onLinkClicked("#services")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Services
@@ -70,6 +76,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
+                onClick={() => onLinkClicked("#career")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Career
@@ -78,6 +85,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.5 }}
+                onClick={() => onLinkClicked("#contact")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Contact
