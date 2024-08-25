@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
 import { MdDone } from "react-icons/md";
+import Certificates from "../Certificates/Certificates";
 
 export default function CareerSection() {
   return (
@@ -187,6 +188,7 @@ export default function CareerSection() {
             </motion.li>
           </ol>
         </div>
+        <Certificates />
       </section>
     </>
   );
