@@ -6,8 +6,10 @@ export const services = [
         benefits: [
             "Full-stack application",
             "Secure application",
-            "Constant feedback",
-            "Fast delivery"
+            "Fast delivery",
+            "Hosting",
+            "Domain",
+            "Tech Support",
         ]
     },
     {
@@ -18,7 +20,10 @@ export const services = [
             "Fast static website",
             "Multiple pages",
             "Fully-responsive design",
-            "Fast delivery"
+            "Fast delivery",
+            "Hosting",
+            "Domain",
+            "Tech Support",
         ]
     },
     {
@@ -29,7 +34,10 @@ export const services = [
             "Restful API",
             "Secure endpoints",
             "Clean architecture",
-            "Fast delivery"
+            "Fast delivery",
+            "Hosting",
+            "Domain",
+            "Tech Support",
         ]
     },
 ]
