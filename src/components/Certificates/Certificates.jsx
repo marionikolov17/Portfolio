@@ -3,13 +3,13 @@ import { FaAngleLeft, FaAngleRight, FaExternalLinkAlt } from "react-icons/fa";
 export default function Certificates() {
     return (
         <>
-            <section className="w-full mt-8 flex flex-col items-center max-h-max px-6">
+            <section className="w-full mt-10 flex flex-col items-center max-h-max px-6">
                 <img 
-                    className=""
+                    className="max-w-full sm:max-w-[500px]"
                     src="/images/certificates/softuni-react.jpg" 
                     alt="certificate" 
                 />
-                <div className="flex items-center justify-around">
+                <div className="flex items-center justify-around mt-4">
                     <FaAngleLeft className="mx-4 text-3xl cursor-pointer text-gray-500 hover:text-black"/>
                     <div className="grow flex flex-col items-center">
                         <h1 className="mt-2 text-xl sm:text-2xl font-bold text-center">ReactJS - June 2024</h1>
