@@ -13,6 +13,7 @@ import Toast from "../../../Toast/Toast";
 export default function DetailCard({ project, closeDetails }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [message, setMessage] = useState("");
+  const [isImageOpened, setIsImageOpened] = useState(false);
 
   const goPreviousImage = () => {
     if (currentImageIndex == 0) {
@@ -50,6 +51,18 @@ export default function DetailCard({ project, closeDetails }) {
 
   return (
     <>
+      {isImageOpened && 
+      <div className="fixed flex justify-center items-center p-2 sm:p-6 top-0 w-full h-screen project-background z-50">
+        <div className="w-full h-full z-10 absolute" onClick={() => setIsImageOpened(false)}></div>
+        <motion.img 
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+          src={project.images[currentImageIndex]} 
+          alt="project-image" 
+          className="max-w-full max-h-full" 
+        />
+      </div>}
       <Toast message={message} setMessage={setMessage}/>
       <motion.section 
         initial={{ opacity: 0 }}
@@ -73,7 +86,8 @@ export default function DetailCard({ project, closeDetails }) {
             <img
               src={project.images[currentImageIndex]}
               alt=""
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full cursor-pointer"
+              onClick={() => setIsImageOpened(true)}
             />
 
             <div className="w-full flex absolute bottom-0 py-2 justify-center items-center bg-white border-t">
