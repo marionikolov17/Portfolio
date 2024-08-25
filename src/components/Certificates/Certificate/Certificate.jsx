@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FaAngleLeft, FaAngleRight, FaExternalLinkAlt } from "react-icons/fa";
 
-export default function Certificate({ certificate }) {
+export default function Certificate({ certificate, goNext, goPrevious }) {
   return (
     <>
       <img
@@ -10,7 +10,7 @@ export default function Certificate({ certificate }) {
         alt="certificate"
       />
       <div className="flex items-center justify-around mt-4">
-        <FaAngleLeft className="mx-4 text-3xl cursor-pointer text-gray-500 hover:text-black" />
+        <FaAngleLeft className="mx-4 text-3xl cursor-pointer text-gray-500 hover:text-black" onClick={goPrevious}/>
         <div className="grow flex flex-col items-center">
           <h1 className="mt-2 text-xl sm:text-2xl font-bold text-center">
             {certificate.title}
@@ -23,7 +23,7 @@ export default function Certificate({ certificate }) {
             <FaExternalLinkAlt className="ms-2" />
           </a>
         </div>
-        <FaAngleRight className="mx-4 text-3xl cursor-pointer text-gray-500 hover:text-black" />
+        <FaAngleRight className="mx-4 text-3xl cursor-pointer text-gray-500 hover:text-black" onClick={goNext} />
       </div>
     </>
   );
