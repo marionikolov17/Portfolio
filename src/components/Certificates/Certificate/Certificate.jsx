@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaAngleLeft, FaAngleRight, FaExternalLinkAlt } from "react-icons/fa";
 import Loader from "../../Loader/Loader";
 
@@ -12,7 +13,11 @@ export default function Certificate({ certificate, goNext, goPrevious }) {
       <div className="flex justify-center items-center">
         <Loader />  
       </div>}
-      <img
+      <motion.img
+        initial={{ opacity: 0, scale: 1 }}
+        whileInView={{ opacity: 1 }}
+        whileHover={{ opacity: 1, scale: 1.2 }}
+        transition={{ duration: 0.75 }}
         className="max-w-full sm:max-w-[500px]"
         src={certificate.imageUrl}
         alt="certificate"
