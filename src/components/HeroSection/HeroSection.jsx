@@ -70,8 +70,8 @@ export default function HeroSection() {
                     >
                         <h1 className="text-3xl sm:text-6xl font-bold title text-center lg:text-start">{title}</h1>
                         <div className="flex lg:flex-row flex-col">
-                            <p className="text-lg sm:text-xl mt-1 underline underline-offset-8 text-center lg:text-start">Javascript Web Developer,</p>
-                            <p className="text-lg sm:text-xl mt-1 ms-3 text-center lg:text-start">Full-stack developer</p>
+                            <p className="text-lg mt-1 underline underline-offset-8 text-center lg:text-start">Javascript Web Developer,</p>
+                            <p className="text-lg mt-1 ms-3 text-center lg:text-start">Full-stack developer</p>
                         </div>
                         <div className="flex items-center justify-center lg:justify-start gap-4 px-4 sm:px-0 lg:gap-0 mt-6 lg:mt-12 flex-wrap">
                             <h3 className="me-6 sm:inline-block hidden text-lg border-r-2 pe-6">Tech Stack</h3>
