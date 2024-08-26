@@ -30,7 +30,7 @@ export default function DesktopNavigation() {
             transition={{ duration: 0.75 }}
             className="fixed left-0 min-h-screen z-40 hidden lg:flex items-center"
         >
-            <nav className="bg-white w-[68px] shadow-md border flex flex-col items-center overflow-hidden">
+            <nav className="bg-white w-[68px] shadow-md border flex flex-col items-center overflow-hidden rounded-e-lg">
                 <div 
                     className="mt-4 rounded-full border p-2 shadow-sm cursor-pointer" onClick={scrollToTop}
                 >
@@ -46,7 +46,7 @@ export default function DesktopNavigation() {
                         "w-full transition min-h-28 py-6 flex justify-center items-center mt-6 hover:bg-gray-100"
                     }
                 >
-                    <a href="#projects" className="text-lg font-normal inline-block rotate-90">Projects</a>
+                    <a href="#projects" className="text-lg font-normal inline-block rotate-90">About</a>
                 </div>
                 <div className={
                     offset > 900 && offset < 2200 ?
@@ -55,7 +55,7 @@ export default function DesktopNavigation() {
                     "w-full transition min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
                     }
                 >
-                    <a href="#services" className="text-lg font-normal inline-block rotate-90">Services</a>
+                    <a href="#services" className="text-lg font-normal inline-block rotate-90">Projects</a>
                 </div>
                 <div className={
                     offset > 2700 && offset < 3700 ?
