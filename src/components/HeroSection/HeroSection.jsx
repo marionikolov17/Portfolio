@@ -30,7 +30,7 @@ export default function HeroSection() {
             <section className="block">
                 <div className="flex flex-col lg:p-6 max-h-max lg:mt-10 items-center">
                     <div className="flex justify-center items-center p-2 lg:p-6">
-                        <div className="w-[280px] h-[280px] overflow-hidden rounded-full flex justify-center items-center ring-2 ring-gray-100">
+                        <div className="w-[280px] h-[280px] overflow-hidden rounded-full flex justify-center items-center ring-2 ring-gray-100 shadow-sm">
                             <motion.img 
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
@@ -47,13 +47,13 @@ export default function HeroSection() {
                         transition={{ duration: 0.75 }}
                         className="w-full shrink flex flex-col items-center h-full p-2 lg:p-6"
                     >
-                        <h1 className="text-2xl lg:text-6xl font-bold title text-center lg:text-start">{title}</h1>
+                        <h1 className="text-2xl sm:text-6xl font-bold title text-center lg:text-start">{title}</h1>
                         <div className="flex lg:flex-row flex-col">
                             <p className="text-lg mt-1 underline underline-offset-8 text-center lg:text-start">Javascript Web Developer,</p>
                             <p className="text-lg mt-1 ms-3 text-center lg:text-start">Full-stack developer</p>
                         </div>
                         <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-0 mt-6 lg:mt-12 flex-wrap">
-                            <h3 className="me-6 text-lg border-r-2 pe-6">Tech Stack</h3>
+                            <h3 className="me-6 sm:inline-block hidden text-lg border-r-2 pe-6">Tech Stack</h3>
                             <SiReact className="text-4xl text-[#61dbfb] me-6"/>
                             <SiRedux className="text-4xl text-[#764abc] me-6"/>
                             <FaAngular className="text-4xl text-[#dd1b16] me-6"/>
