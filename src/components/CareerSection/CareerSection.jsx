@@ -25,7 +25,7 @@ export default function CareerSection() {
           className="text-center text-slate-400 text-lg"
         >So far...</motion.p>
         <div className="flex justify-center px-4 mt-8">
-          <ol className="relative border-s border-gray-200 dark:border-gray-700 max-w-[800px]">
+          <ol className="relative border-s-4 border-gray-700 dark:border-gray-700 max-w-[800px]">
             <motion.li 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -36,9 +36,9 @@ export default function CareerSection() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.5 }}
-                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-2 border border-white dark:border-gray-900 dark:bg-gray-700"
               ></motion.div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600">
                 Sometime in 2020
               </time>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -59,7 +59,7 @@ export default function CareerSection() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.5 }}
-                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-2 border border-white dark:border-gray-900 dark:bg-gray-700"
               ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 Early 2021
@@ -101,7 +101,7 @@ export default function CareerSection() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.5 }}
-                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-2 border border-white dark:border-gray-900 dark:bg-gray-700"
               ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 2022
@@ -125,7 +125,7 @@ export default function CareerSection() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.5 }}
-                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-2 border border-white dark:border-gray-900 dark:bg-gray-700"
               ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 January 2023
@@ -148,7 +148,7 @@ export default function CareerSection() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.5 }}
-                className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                className="absolute w-3 h-3 bg-gray-700 rounded-full mt-1.5 -start-2 border border-white dark:border-gray-900 dark:bg-gray-700"
               ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 May 2024
@@ -171,7 +171,7 @@ export default function CareerSection() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.5 }}
-                className="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+                className="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-2 border border-white dark:border-gray-900 dark:bg-gray-700"
               ></motion.div>
               <time className="mb-1 text-sm font-normal leading-none text-green-600">
                 August 2024
@@ -184,7 +184,7 @@ export default function CareerSection() {
               </p>
               <button 
                 onClick={() => setIsCertificatesShown(!isCertificatesShown)}
-                className="mt-2 border flex items-center py-2 px-4 rounded-lg text-sm text-gray-900 font-medium border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700"
+                className="mt-2 bg-white border flex items-center py-2 px-4 rounded-lg text-sm text-gray-900 font-medium border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700"
               >
                 {isCertificatesShown ? 'Hide Certificates' : 'View Certificates'}
                 <svg 
