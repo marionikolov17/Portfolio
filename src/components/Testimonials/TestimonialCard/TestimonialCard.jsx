@@ -35,11 +35,11 @@ export default function TestimonialCard({ testimonial }) {
                 src={testimonial?.authorImageUrl}
                 alt="profile picture"
               />
-              <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                <div className="text-sm sm:text-base pr-3 font-medium text-gray-900 dark:text-white">
+              <div className="flex flex-col max-w-full sm:flex-row items-center sm:divide-x-2 sm:divide-gray-500">
+                <div className="text-sm sm:text-base text-center sm:text-start sm:pr-3 font-medium text-gray-900 dark:text-white">
                   {testimonial?.authorName}
                 </div>
-                <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
+                <div className="sm:pl-3 text-sm sm:text-start text-center font-light text-gray-500 dark:text-gray-400">
                   {testimonial?.authorJob}
                 </div>
               </div>
