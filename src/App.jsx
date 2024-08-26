@@ -12,7 +12,7 @@ import Testimonials from "./components/Testimonials/Testimonials"
 function App() {
   return (
     <>
-      <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden">
+      <main className="w-full absolute min-h-full font-spartan overflow-x-hidden">
         <DesktopNavigation />
         <MobileNavigation />
         <HeroSection />
