@@ -7,11 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        lightBlue: "#265077",
-        darkBlue: "#022140",
-        primaryPurple: "#494B68",
-        secondaryBlue: "#1E4258",
-        mainGreen: "2D5F5D"
+        primary: "#121212",
+        primaryGreen: "#06a94d",
+        primaryText: "#fff"
       }
     },
     fontFamily: {

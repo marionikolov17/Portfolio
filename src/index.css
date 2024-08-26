@@ -69,7 +69,7 @@
     width: 4px;
     height: 50px;
     margin-left: 5px;
-    background-color: black;
+    background-color: #03dac5;
     animation: blink-caret 0.6s ease infinite;
   }
 
@@ -108,7 +108,7 @@
       background-color: transparent;
     }
     50% {
-      background-color: black;
+      background-color: #06a94d;
     }
     100% {
       background-color: transparent;
