@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import CareerSection from "./components/CareerSection/CareerSection"
 import ContactSection from "./components/ContactSection/ContactSection"
 import DesktopNavigation from "./components/DesktopNavigation/DesktopNavigation"
@@ -16,7 +17,7 @@ function App() {
         <MobileNavigation />
         <HeroSection />
         <ProjectsSection />
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <Testimonials />
         <CareerSection />
         <ContactSection />
