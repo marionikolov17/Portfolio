@@ -22,6 +22,7 @@ function App() {
         <CareerSection />
         <ContactSection />
         <Footer />
+        <div className="fixed top-0 w-full h-full paper-bg -z-10"></div>
       </main>
     </>
   )

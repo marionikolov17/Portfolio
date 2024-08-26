@@ -74,7 +74,7 @@ export default function HeroSection() {
                             <p className="text-lg mt-1 ms-3 text-center lg:text-start">Full-stack developer</p>
                         </div>
                         <div className="flex items-center justify-center lg:justify-start gap-4 px-4 sm:px-0 lg:gap-0 mt-6 lg:mt-12 flex-wrap">
-                            <h3 className="me-6 sm:inline-block hidden text-lg border-r-2 pe-6">Tech Stack</h3>
+                            <h3 className="me-6 sm:inline-block hidden text-lg border-r-2 border-r-gray-600 pe-6">Tech Stack</h3>
                             <SiReact className="text-3xl sm:text-4xl text-[#61dbfb] me-6"/>
                             <SiRedux className="text-3xl sm:text-4xl text-[#764abc] me-6"/>
                             <FaAngular className="text-3xl sm:text-4xl text-[#dd1b16] me-6"/>
