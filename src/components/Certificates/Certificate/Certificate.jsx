@@ -31,7 +31,7 @@ export default function Certificate({ certificate, goNext, goPrevious }) {
           </h1>
           <a
             href={certificate.credentialUrl}
-            className="flex w-max items-center mt-3 border rounded-lg py-2 px-4 ring-1 ring-gray-100 hover:bg-gray-100 hover:text-blue-700"
+            className="flex w-max items-center mt-3 border rounded-lg py-2 px-4 bg-white ring-1 ring-gray-100 hover:bg-gray-100 hover:text-blue-700"
           >
             Show credential
             <FaExternalLinkAlt className="ms-2" />
