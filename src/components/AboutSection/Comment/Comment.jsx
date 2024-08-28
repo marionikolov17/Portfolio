@@ -1,10 +1,16 @@
 /* eslint-disable react/prop-types */
+import { motion } from "framer-motion";
 import { FaHeart } from "react-icons/fa";
 
 export default function Comment({ likes, shares, time, children }) {
   return (
     <>
-      <div className="mt-2 flex w-full py-2 px-4">
+      <motion.div 
+        initial={{ x: 600 }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mt-2 flex w-full py-2 px-4"
+      >
         <div className="w-12 h-12 shrink-0 border shadow-sm flex justify-center rounded-full overflow-hidden">
           <img src="/images/mario-2.png" className="object-cover" alt="" />
         </div>
@@ -22,7 +28,7 @@ export default function Comment({ likes, shares, time, children }) {
         <div>
           <FaHeart className="text-xl text-green-500" />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
