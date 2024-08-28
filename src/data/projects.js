@@ -7,8 +7,10 @@ export const projects = [
         githubUrl: "https://github.com/marionikolov17/Zynkle",
         demoUrl: "https://zynkle-1-gsu7.onrender.com/",
         images: [
-            "/images/1.jpg",
-            "/images/123.png"
+            "/images/zynkle/zynkle-1.jpg",
+            "/images/zynkle/zynkle-2.jpg",
+            "/images/zynkle/zynkle-3.jpg",
+            "/images/zynkle/zynkle-4.jpg",
         ],
         tech: {
             "Front-End": [
