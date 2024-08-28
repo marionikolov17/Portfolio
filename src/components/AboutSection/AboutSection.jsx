@@ -5,7 +5,7 @@ export default function AboutSection() {
     return (
         <>
             <section className="px-2 sm:px-0 sm:mt-0 mt-4 w-full flex justify-center">
-                <div className="w-full sm:w-[80%] lg:w-[65%] 2xl:w-[45%] h-max pb-4 border rounded-lg shadow-sm bg-white flex flex-row">
+                <div className="w-full sm:w-[80%] lg:w-[65%] 2xl:w-[45%] h-max border rounded-lg shadow-sm bg-white flex flex-row">
                     <div className="grow flex flex-col pt-2">
                         <div className="block grow overflow-y-scroll no-scrollbar border-b">
                             <Comment likes={3} shares={24} time={"just now"}>
