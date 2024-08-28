@@ -84,9 +84,9 @@ export default function HeroSection() {
                             <SiTailwindcss className="text-3xl sm:text-4xl text-[#06b6d4] me-6"/>
                         </div>
                         <div className="flex mt-12 justify-center lg:justify-start">
-                            <a href="" className="text-2xl me-4"><FaLinkedin /></a>
-                            <a href="" className="text-2xl me-4"><FaGithub /></a>
-                            <a href="" className="text-2xl me-4"><FaInstagram /></a>
+                            <a href="https://www.linkedin.com/in/marionikolovdev/" className="text-2xl me-4"><FaLinkedin /></a>
+                            <a href="https://github.com/marionikolov17" className="text-2xl me-4"><FaGithub /></a>
+                            <a href="https://www.instagram.com/marionikolov17" className="text-2xl me-4"><FaInstagram /></a>
                         </div>
                     </motion.div>
                 </div>
