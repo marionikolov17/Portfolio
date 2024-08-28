@@ -55,7 +55,7 @@ export default function MobileNavigation() {
             <motion.div 
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
                 className="mt-4 ms-4 rounded-full border p-2 shadow-sm cursor-pointer bg-white absolute top-0 left-0"
             >
                 <h3 className="flex items-end text-lg font-bold">
