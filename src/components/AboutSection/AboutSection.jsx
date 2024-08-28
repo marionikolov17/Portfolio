@@ -13,7 +13,7 @@ export default function AboutSection() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.75 }}
-                    className="w-full sm:w-[80%] lg:w-[65%] 2xl:w-[45%] h-max border sm:rounded-lg shadow-sm bg-white flex flex-row"
+                    className="w-full sm:w-[80%] lg:w-[65%] 2xl:w-[45%] h-max sm:border sm:rounded-lg sm:shadow-sm bg-white flex flex-row"
                 >
                     <div className="grow flex flex-col py-2">
                         <div className="block grow overflow-x-hidden overflow-y-scroll no-scrollbar border-b pb-4">
@@ -59,7 +59,7 @@ export default function AboutSection() {
                                     <CiShare2 className="text-2xl ms-5"/>
                                 </motion.div>
                                 <motion.div 
-                                    initial={{ x: 200 }}
+                                    initial={{ x: 20 }}
                                     whileInView={{ x: 0 }}
                                     transition={{ duration: 0.5 }}
                                     className="flex grow justify-end items-center pt-4"

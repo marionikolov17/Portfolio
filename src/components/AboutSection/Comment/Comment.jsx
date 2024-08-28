@@ -6,7 +6,7 @@ export default function Comment({ likes, shares, time, children }) {
   return (
     <>
       <motion.div 
-        initial={{ x: 600 }}
+        initial={{ x: 200 }}
         whileInView={{ x: 0 }}
         transition={{ duration: 0.5 }}
         className="mt-2 flex w-full py-2 px-4"
