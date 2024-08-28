@@ -9,8 +9,8 @@ export default function Comment({ likes, shares, time, children }) {
           <img src="/images/mario-2.png" className="object-cover" alt="" />
         </div>
         <div className="grow shrink ms-4">
-          <h3 className="text-base font-bold">
-            <span className="text-green-500">@</span>mario
+          <h3 className="text-sm sm:text-base font-bold">
+            <span className="text-green-500">@</span>mario_dev
           </h3>
           {children}
           <div className="flex mt-1">
