@@ -8,7 +8,7 @@ import { CiBookmarkCheck, CiShare2 } from "react-icons/ci";
 export default function AboutSection() {
     return (
         <>
-            <section className="lg:mt-0 mt-4 w-full flex justify-center">
+            <section className="lg:mt-0 mt-4 w-full flex justify-center" id="about">
                 <motion.div 
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
