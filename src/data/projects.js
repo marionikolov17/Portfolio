@@ -1,7 +1,7 @@
 export const projects = [
     {
         id: "1",
-        imageUrl: "/images/zynkle-logo-thumbnail.jpg",
+        imageUrl: "/images/zynkle/zynkle-1.jpg",
         name: "Zynkle",
         summary: "Incoming social media app, connecting people around the world.",
         githubUrl: "https://github.com/marionikolov17/Zynkle",
@@ -59,13 +59,18 @@ export const projects = [
     },
     {
         id: "2",
-        imageUrl: "/images/fitness-manager-logo.jpg",
+        imageUrl: "/images/fitness/fitness-5.jpg",
         name: "Fitness-Manager",
         summary: "Create your workout or choose the best one!",
         githubUrl: "https://github.com/MihaelPavlov/Fitness-Coaching-Manager",
         demoUrl: "",
         images: [
             "/images/fitness/fitness-1.jpg",
+            "/images/fitness/fitness-2.jpg",
+            "/images/fitness/fitness-3.jpg",
+            "/images/fitness/fitness-4.jpg",
+            "/images/fitness/fitness-5.jpg",
+            "/images/fitness/fitness-6.jpg",
         ],
         tech: {
             "Front-End": [
