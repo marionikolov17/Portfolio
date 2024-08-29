@@ -41,7 +41,7 @@ export default function CareerSection() {
               <time className="mb-1 text-sm font-normal leading-none text-gray-600">
                 Sometime in 2020
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900">
                 Experimenting with HTML and CSS
               </h3>
               <p className="mb-4 text-base font-normal text-gray-500">
@@ -64,7 +64,7 @@ export default function CareerSection() {
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 Early 2021
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900">
                 First steps in the Javascript's world
               </h3>
               <p className="mb-2 text-base font-normal text-gray-700">
@@ -106,7 +106,7 @@ export default function CareerSection() {
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 2022
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900">
                 Experimenting in different types of software development
               </h3>
               <p className="text-base font-normal text-black">
@@ -130,7 +130,7 @@ export default function CareerSection() {
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 January 2023
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900">
                 Started my learning path in SoftUni
               </h3>
               <p className="text-base font-normal text-gray-500">
@@ -153,7 +153,7 @@ export default function CareerSection() {
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 May 2024
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900">
                 Joined the "Intern and Tech Lead Academy 2"
               </h3>
               <p className="text-base font-normal text-gray-500">
@@ -176,7 +176,7 @@ export default function CareerSection() {
               <time className="mb-1 text-sm font-normal leading-none text-green-600">
                 August 2024
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-900">
                 Finished my learning in SoftUni
               </h3>
               <p className="text-base font-normal text-black">
