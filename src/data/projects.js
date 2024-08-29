@@ -84,7 +84,17 @@ export const projects = [
             ]
         },
         features: [
-            "Fitness app features."
+            "Become a contributor",
+            "Create exercises",
+            "Create workouts",
+            "Manage your workouts and exercises",
+            "Become a trainee",
+            "Subscribe to contributors",
+            "Get assigned to do a workout",
+            "Private chat to your contributor",
+            "Doing real-time workouts",
+            "Save workouts to your collection",
+            "Edit your profile"
         ],
         skills: [
             "Learned how to work in team.",
