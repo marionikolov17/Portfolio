@@ -65,8 +65,7 @@ export const projects = [
         githubUrl: "https://github.com/MihaelPavlov/Fitness-Coaching-Manager",
         demoUrl: "",
         images: [
-            "/images/1.jpg",
-            "/images/123.png"
+            "/images/fitness/fitness-1.jpg",
         ],
         tech: {
             "Front-End": [
