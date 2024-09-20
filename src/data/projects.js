@@ -9,8 +9,8 @@ export const projects = [
         images: [
             "/images/zynkle/zynkle-1.jpg",
             "/images/zynkle/zynkle-2.jpg",
-            "/images/zynkle/zynkle-3.jpg",
-            "/images/zynkle/zynkle-4.jpg",
+            "/images/zynkle/zynkle-5.jpg",
+            "/images/zynkle/zynkle-7.jpg",
         ],
         tech: {
             "Front-End": [
@@ -25,6 +25,7 @@ export const projects = [
         },
         features: [
             "User authentication that uses more complex authentication flow, in order to bring more security.",
+            "Notifications",
             "Implementation of infinite scrolling on home page, which brings more discoverability to the users and their posts.",
             "Creation of posts which uses memory storage for preparing the file, and then saves it to a cloud file storage.",
             "Interacting with posts - like/dislike, save/unsave, share and comment",
