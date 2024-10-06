@@ -14,6 +14,9 @@ function App() {
   return (
     <>
       <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden">
+        <div className="w-full py-2 flex justify-center items-center bg-black">
+          <p className="text-white text-sm">Managed by <a className="underline" href="https://portfolio-administrator.onrender.com/">Administrator</a></p>
+        </div>
         <DesktopNavigation />
         <MobileNavigation />
         <HeroSection />

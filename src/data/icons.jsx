@@ -1,6 +1,7 @@
 import { FaNode } from "react-icons/fa";
 import {
   SiAngular,
+  SiAppwrite,
   SiAxios,
   SiExpress,
   SiFirebase,
@@ -8,6 +9,7 @@ import {
   SiMongodb,
   SiMysql,
   SiReact,
+  SiReactquery,
   SiRedux,
   SiTailwindcss,
   SiTypescript,
@@ -30,4 +32,6 @@ export const icons = {
   angular: <SiAngular key={11} className={iconClassName + " text-[#dd1b16]"} />,
   mysql: <SiMysql key={12} className={iconClassName} />,
   knex: <SiKnexdotjs key={13} className={iconClassName + " text-[#e16426]"} />,
+  reactQuery: <SiReactquery key={14} className={iconClassName} />,
+  appwrite: <SiAppwrite key={15} className={iconClassName} />,
 };

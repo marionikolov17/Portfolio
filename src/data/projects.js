@@ -1,6 +1,48 @@
 export const projects = [
     {
         id: "1",
+        imageUrl: "/images/administrator/image-7.jpg",
+        name: "Portfolio Administrator",
+        summary: "Administration for my personal portfolio",
+        githubUrl: "https://github.com/marionikolov17/Portfolio-Administrator",
+        demoUrl: "https://portfolio-administrator.onrender.com/",
+        images: [
+            "/images/administrator/image-1.jpg",
+            "/images/administrator/image-2.jpg",
+            "/images/administrator/image-3.jpg",
+            "/images/administrator/image-4.jpg",
+            "/images/administrator/image-5.jpg",
+            "/images/administrator/image-6.jpg",
+            "/images/administrator/image-7.jpg",
+            "/images/administrator/image-8.jpg",
+            "/images/administrator/image-9.jpg",
+        ],
+        tech: {
+            "Front-End": [
+                "react", "vite", "tailwind", "reactQuery"
+            ],
+            "Back-End": [
+                "appwrite"
+            ],
+        },
+        features: [
+            "Who has seen my portfolio (ip address, country, and other information)",
+            "For how long my portfolio was browsed",
+            "Exactly which sections are visited",
+            "Exactly which projects are visited",
+            "Every message sent through the contact form",
+            "Everything is available for the last 7, last 30 days and for all-time.",
+            "Every message from the inbox can be filtered and found",
+            "Notifications can be filtered for certain periods and types"
+        ],
+        skills: [
+            "Learned React Query",
+            "Learned Appwrite",
+            "Learned how to optimize performance and speed"
+        ]
+    },
+    {
+        id: "2",
         imageUrl: "/images/zynkle/zynkle-1.jpg",
         name: "Zynkle",
         summary: "Incoming social media app, connecting people around the world.",
@@ -59,7 +101,7 @@ export const projects = [
         ]
     },
     {
-        id: "2",
+        id: "3",
         imageUrl: "/images/fitness/fitness-5.jpg",
         name: "Fitness-Manager",
         summary: "Create your workout or choose the best one!",
