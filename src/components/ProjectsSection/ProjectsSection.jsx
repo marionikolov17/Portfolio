@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import ProjectCard from "./ProjectCard/ProjectCard";
 import { projects } from "./../../data/projects";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ handleClickNotification }) {
   return (
     <>
       <section id="projects" className="w-full d-block mt-12 lg:mt-4 mb-4">
@@ -9,7 +10,7 @@ export default function ProjectsSection() {
 
         <div className="w-full flex flex-wrap justify-center mt-6 relative">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} handleClickNotification={handleClickNotification} />
           ))}
         </div>
       </section>

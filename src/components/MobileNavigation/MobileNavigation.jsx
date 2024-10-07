@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 
-export default function MobileNavigation() {
+export default function MobileNavigation({ handleClickNotification }) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   useEffect(() => {
@@ -16,8 +17,9 @@ export default function MobileNavigation() {
     }
   }, []);
 
-  const onLinkClicked = (section) => {
+  const onLinkClicked = (section, message) => {
     window.location.href = window.location.origin + section;
+    handleClickNotification(message)
   }
 
   return (
@@ -68,7 +70,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                onClick={() => onLinkClicked("#about")}
+                onClick={() => onLinkClicked("#about", "clicked on About section")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 About
@@ -77,7 +79,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                onClick={() => onLinkClicked("#projects")}
+                onClick={() => onLinkClicked("#projects", "clicked on Projects section")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Projects
@@ -86,7 +88,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
-                onClick={() => onLinkClicked("#career")}
+                onClick={() => onLinkClicked("#career", "clicked on Career section")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Career
@@ -95,7 +97,7 @@ export default function MobileNavigation() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.5 }}
-                onClick={() => onLinkClicked("#contact")}
+                onClick={() => onLinkClicked("#contact", "clicked on Contact section")}
                 className="text-gray-900 z-20 w-44 px-4 py-1.5 flex justify-center items-center border shadow-sm ring-2 ring-gray-100 font-bold text-xl my-3 rounded-lg focus:ring-4"
             >
                 Contact

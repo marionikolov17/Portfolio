@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function DesktopNavigation() {
+export default function DesktopNavigation({ handleClickNotification }) {
     const [offset, setOffset] = useState(0);
 
     const scrollToTop = () => {
@@ -46,7 +47,7 @@ export default function DesktopNavigation() {
                         "w-full transition min-h-28 py-6 flex justify-center items-center mt-6 hover:bg-gray-100"
                     }
                 >
-                    <a href="#about" className="text-lg font-normal inline-block rotate-90">About</a>
+                    <a href="#about" className="text-lg font-normal inline-block rotate-90" onClick={() => handleClickNotification("clicked on About section")}>About</a>
                 </div>
                 <div className={
                     offset > 1000 && offset < 1700 ?
@@ -55,7 +56,7 @@ export default function DesktopNavigation() {
                     "w-full transition min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
                     }
                 >
-                    <a href="#projects" className="text-lg font-normal inline-block rotate-90">Projects</a>
+                    <a href="#projects" className="text-lg font-normal inline-block rotate-90" onClick={() => handleClickNotification("clicked on Projects section")}>Projects</a>
                 </div>
                 <div className={
                     offset > 1900 && offset < 2700 ?
@@ -64,7 +65,7 @@ export default function DesktopNavigation() {
                     "w-full transition min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
                     }
                 >
-                    <a href="#career" className="text-lg font-normal inline-block rotate-90">Career</a>
+                    <a href="#career" className="text-lg font-normal inline-block rotate-90" onClick={() => handleClickNotification("clicked on Career section")}>Career</a>
                 </div>
                 <div className={
                     offset > 2700 ?
@@ -73,7 +74,7 @@ export default function DesktopNavigation() {
                     "w-full min-h-28 py-6 flex justify-center items-center hover:bg-gray-100"
                     }
                 >
-                    <a href="#contact" className="text-lg font-normal inline-block rotate-90">Contact</a>
+                    <a href="#contact" className="text-lg font-normal inline-block rotate-90" onClick={() => handleClickNotification("clicked on Contact section")}>Contact</a>
                 </div>
             </nav>
         </motion.section>

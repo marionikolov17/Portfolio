@@ -6,11 +6,14 @@ import { motion } from "framer-motion";
 import DetailCard from "./DetailCard/DetailCard";
 import Toast from "../../Toast/Toast";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, handleClickNotification }) {
     const [isDetailsOpened, setIsDetailsOpened] = useState(false);
     const [message, setMessage] = useState("")
 
-    const openDetails = () => setIsDetailsOpened(true);
+    const openDetails = () => {
+        handleClickNotification(`clicked on "${project.name}"`);
+        setIsDetailsOpened(true)
+    };
 
     const closeDetails = () => setIsDetailsOpened(false);
 
