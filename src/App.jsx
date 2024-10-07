@@ -66,7 +66,7 @@ function App() {
         <MobileNavigation handleClickNotification={handleClickNotification}/>
         <HeroSection />
         <AboutSection />
-        <ProjectsSection />
+        <ProjectsSection handleClickNotification={handleClickNotification}/>
         <Testimonials />
         <CareerSection />
         <ContactSection />
