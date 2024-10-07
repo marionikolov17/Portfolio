@@ -8,10 +8,12 @@ import HeroSection from "./components/HeroSection/HeroSection"
 import MobileNavigation from "./components/MobileNavigation/MobileNavigation"
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection"
 import Testimonials from "./components/Testimonials/Testimonials"
+import { useInitVisit } from "./hooks/useInitVisit"
 
 function App() {
 
   // Tracking reports from here
+  useInitVisit();
 
   return (
     <>
