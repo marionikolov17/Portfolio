@@ -63,7 +63,7 @@ function App() {
           </p>
         </div>
         <DesktopNavigation handleClickNotification={handleClickNotification}/>
-        <MobileNavigation />
+        <MobileNavigation handleClickNotification={handleClickNotification}/>
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
