@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import AboutSection from "./components/AboutSection/AboutSection";
 import CareerSection from "./components/CareerSection/CareerSection";
 import ContactSection from "./components/ContactSection/ContactSection";
