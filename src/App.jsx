@@ -7,7 +7,6 @@ import Footer from "./components/Footer/Footer"
 import HeroSection from "./components/HeroSection/HeroSection"
 import MobileNavigation from "./components/MobileNavigation/MobileNavigation"
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection"
-import ServicesSection from "./components/ServicesSection/ServicesSection"
 import Testimonials from "./components/Testimonials/Testimonials"
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
-        {/* <ServicesSection /> */}
         <Testimonials />
         <CareerSection />
         <ContactSection />
