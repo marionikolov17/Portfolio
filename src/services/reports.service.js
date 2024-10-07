@@ -39,11 +39,36 @@ export const updateRecords = async (data) => {
     data.createdNotificationID,
     { totalTime: data.totalTime }
   );
-  const resTwo = await databases.updateDocument(DATABASE_ID, VIEWS_COLLECTION_ID, data.createdViewID, {
-    viewedTime: data.totalTime,
-  });
+  const resTwo = await databases.updateDocument(
+    DATABASE_ID,
+    VIEWS_COLLECTION_ID,
+    data.createdViewID,
+    {
+      viewedTime: data.totalTime,
+    }
+  );
 
-  return { resOne, resTwo }
+  return { resOne, resTwo };
+};
+
+export const createClickRecord = async (data) => {
+  const { fetchedData, message } = data;
+
+  const response = await databases.createDocument(
+    DATABASE_ID,
+    NOTIFICATIONS_COLLECTION_ID,
+    ID.unique(),
+    {
+      type: "click",
+      actorIP: fetchedData.ip,
+      actorCountry: fetchedData.country_name,
+      message: message,
+      totalTime: 0,
+      isRead: false,
+    }
+  );
+
+  return response;
 };
 
 export const getClientInformation = async () => {
