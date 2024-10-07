@@ -27,6 +27,8 @@ export const reportInitVisit = async (data) => {
     return { createdViewsRecord, createdNotificationsRecord }
 }
 
+
+
 export const getClientInformation = async () => {
     const response = await fetch("https://ipapi.co/json/");
     const data = await response.json();
