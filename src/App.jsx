@@ -11,13 +11,21 @@ import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import Testimonials from "./components/Testimonials/Testimonials";
 import { useInitVisit } from "./hooks/useInitVisit";
 import { useMutation } from "@tanstack/react-query";
-import { updateRecords } from "./services/reports.service";
+import { createClickRecord, updateRecords } from "./services/reports.service";
 
 function App() {
   const [fetchedData, setFetchedData] = useState();
   const [createdNotificationID, setCreatedNotificationID] = useState();
   const [createdViewID, setCreatedViewID] = useState();
   const [time, setTime] = useState(0);
+
+  const clickMutation = useMutation({
+    mutationFn: (data) => createClickRecord(data)
+  });
+
+  const handleClickNotification = (message) => {
+    clickMutation.mutate({ fetchedData, message });
+  }
 
   const { mutate } = useMutation({
     mutationFn: (data) => updateRecords(data),
@@ -54,7 +62,7 @@ function App() {
             </a>
           </p>
         </div>
-        <DesktopNavigation />
+        <DesktopNavigation handleClickNotification={handleClickNotification}/>
         <MobileNavigation />
         <HeroSection />
         <AboutSection />
