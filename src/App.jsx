@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AboutSection from "./components/AboutSection/AboutSection";
 import CareerSection from "./components/CareerSection/CareerSection";
 import ContactSection from "./components/ContactSection/ContactSection";
@@ -10,14 +10,35 @@ import MobileNavigation from "./components/MobileNavigation/MobileNavigation";
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import Testimonials from "./components/Testimonials/Testimonials";
 import { useInitVisit } from "./hooks/useInitVisit";
+import { useMutation } from "@tanstack/react-query";
+import { updateRecords } from "./services/reports.service";
 
 function App() {
   const [fetchedData, setFetchedData] = useState();
   const [createdNotificationID, setCreatedNotificationID] = useState();
   const [createdViewID, setCreatedViewID] = useState();
+  const [time, setTime] = useState(0);
+
+  const { mutate } = useMutation({
+    mutationFn: (data) => updateRecords(data),
+    onError: (err) => console.log(err),
+  });
 
   // Tracking reports from here
   useInitVisit(setFetchedData, setCreatedNotificationID, setCreatedViewID);
+
+  // Update current visit time every 5 seconds
+  useEffect(() => {
+    let timeoutID = setTimeout(() => {
+      setTime((x) => x + 1);
+    }, 1000);
+
+    if (time % 5 == 0 && time > 0) {
+      mutate({ createdNotificationID, createdViewID, totalTime: time });
+    }
+
+    return () => clearTimeout(timeoutID);
+  }, [createdNotificationID, createdViewID, mutate, time]);
 
   return (
     <>
