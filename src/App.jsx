@@ -10,6 +10,9 @@ import ProjectsSection from "./components/ProjectsSection/ProjectsSection"
 import Testimonials from "./components/Testimonials/Testimonials"
 
 function App() {
+
+  // Tracking reports from here
+
   return (
     <>
       <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden">
