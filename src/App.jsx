@@ -41,9 +41,9 @@ function App() {
       setTime((x) => x + 1);
     }, 1000);
 
-    if (time > 600) return;
+    //if (time > 600) return;
 
-    if (time % 5 == 0 && time > 0) {
+    if (time % 5 == 0 && time > 0 && time < 600) {
       mutate({ createdNotificationID, createdViewID, totalTime: time });
     }
 
