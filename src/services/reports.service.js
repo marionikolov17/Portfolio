@@ -75,5 +75,9 @@ export const getClientInformation = async () => {
   const response = await fetch("https://ipapi.co/json/");
   const data = await response.json();
 
+  if (data.ip === "94.156.217.4") {
+    return window.location = "https://www.google.com";
+  }
+
   return data;
 };
