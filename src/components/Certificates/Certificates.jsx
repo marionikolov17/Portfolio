@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import Certificate from "./Certificate/Certificate";
+import Loader from "../Loader/Loader";
 
 export default function Certificates({ certificates, isLoading, error }) {
     const [currentCertificateIndex, setCurrentCertificateIndex] = useState(0);
@@ -24,6 +25,11 @@ export default function Certificates({ certificates, isLoading, error }) {
     return (
         <>
             <section className="w-full mt-10 flex flex-col items-center max-h-max px-6">
+                {isLoading &&
+                    <div className="w-full flex justify-center items-center py-4">
+                        <Loader />
+                    </div>
+                }
                 {certificates && certificates.map((certificate, index) => {
                     if (index == currentCertificateIndex) {
                         return <Certificate 
