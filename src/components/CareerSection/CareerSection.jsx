@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import { MdDone } from "react-icons/md";
 import Certificates from "../Certificates/Certificates";
 import { useState } from "react";
+import { useGetCertificates } from "../../hooks/useGetCertificates";
 
 export default function CareerSection() {
   const [isCertificatesShown, setIsCertificatesShown] = useState(false);
+
+  const { certificates, isLoading, error } = useGetCertificates();
 
   return (
     <>
@@ -198,7 +201,7 @@ export default function CareerSection() {
             </motion.li>
           </ol>
         </div>
-        {isCertificatesShown && <Certificates />}
+        {isCertificatesShown && <Certificates certificates={certificates} isLoading={isLoading} error={error}/>}
       </section>
     </>
   );

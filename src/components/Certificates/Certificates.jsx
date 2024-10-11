@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { certificates } from "../../data/certificates";
 import Certificate from "./Certificate/Certificate";
+import Loader from "../Loader/Loader";
 
-export default function Certificates() {
+export default function Certificates({ certificates, isLoading, error }) {
     const [currentCertificateIndex, setCurrentCertificateIndex] = useState(0);
 
     const goNext = () => {
@@ -24,10 +25,15 @@ export default function Certificates() {
     return (
         <>
             <section className="w-full mt-10 flex flex-col items-center max-h-max px-6">
-                {certificates.map((certificate, index) => {
+                {isLoading &&
+                    <div className="w-full flex justify-center items-center py-4">
+                        <Loader />
+                    </div>
+                }
+                {certificates && certificates.map((certificate, index) => {
                     if (index == currentCertificateIndex) {
                         return <Certificate 
-                                    key={certificate.id} 
+                                    key={certificate.$id} 
                                     certificate={certificate}
                                     goNext={goNext}
                                     goPrevious={goPrevious}
@@ -35,6 +41,7 @@ export default function Certificates() {
                     }
                     return ""
                 })}
+                {error && <p className="text-red-600 text-lg text-center my-3">Could not get certificates right now</p>}
             </section>
         </>
     )
