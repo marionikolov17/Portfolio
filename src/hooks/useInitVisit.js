@@ -29,7 +29,7 @@ export function useInitVisit(
     if (data !== null && data !== undefined) {
       // Initial report
       setFetchedData(data);
-      mutate(data);
+      //mutate(data);
     }
 
   }, [data, setFetchedData, mutate]);
