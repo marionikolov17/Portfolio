@@ -1,9 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
 import { CiLinkedin } from "react-icons/ci";
 import { MdOutlineContentPaste, MdOutlineEmail, MdOutlinePhone, MdOutlineSubject } from "react-icons/md";
 
 export default function ContactSection() {
+    const { 
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm();
+
+    const onSend = async (data) => {}
+
     return (
         <>
             <section id="contact" className="w-full flex flex-col-reverse sm:flex-row mt-10 sm:mt-24 mb-8">
@@ -13,7 +22,23 @@ export default function ContactSection() {
                     transition={{ duration: 0.75 }}
                     className="grow w-full sm:w-1/2 flex justify-end px-6 lg:px-24"
                 >
-                    <form action="mailto:marionikolovdev@gmail.com" method="post" className="block w-full lg:w-96">
+                    <form 
+                        onSubmit={handleSubmit(onSend)}
+                        className="block w-full lg:w-96"
+                    >
+                        <div className="mb-6">
+                            <label htmlFor="name" className="flex items-center font-medium">
+                                Your Name
+                                <MdOutlineSubject className="ms-2 text-xl"/>
+                            </label>
+                            <input 
+                                type="text"
+                                {...register("name", { required: "This field is required" })} 
+                                id="name"
+                                placeholder="e.g John Doe"
+                                className="w-full border-0 outline-none rounded-sm ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
+                            />
+                        </div>
                         <div className="mt-4 mb-6">
                             <label htmlFor="email" className="flex items-center font-medium mb-1">
                                 Your email
@@ -21,10 +46,10 @@ export default function ContactSection() {
                             </label>
                             <input 
                                 type="email"
-                                required 
+                                {...register("email", { required: "This field is required" })} 
                                 id="email"
                                 placeholder="johndoe@gmail.com"
-                                className="w-full border-0 rounded-sm ring-inset ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 placeholder:text-gray-400"
+                                className="w-full border-0 outline-none rounded-sm ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
                             />
                         </div>
                         <div className="mb-6">
@@ -34,10 +59,10 @@ export default function ContactSection() {
                             </label>
                             <input 
                                 type="text"
-                                required 
+                                {...register("title", { required: "This field is required" })} 
                                 id="subject"
                                 placeholder="Job proporsal"
-                                className="w-full border-0 rounded-sm ring-inset ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 placeholder:text-gray-400"
+                                className="w-full border-0 outline-none rounded-sm ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
                             />
                         </div>
                         <div className="mb-3">
@@ -46,10 +71,10 @@ export default function ContactSection() {
                                 <MdOutlineContentPaste className="ms-2 text-xl"/>
                             </label>
                             <textarea 
-                                required 
+                                {...register("message", { required: "This field is required" })} 
                                 id="content"
                                 placeholder="Type..."
-                                className="w-full min-h-32 border-0 rounded-sm ring-inset ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 placeholder:text-gray-400"
+                                className="w-full min-h-32 border-0 rounded-sm outline-none ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
                             ></textarea>
                         </div>
                         <button className="w-full flex justify-center items-center py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
