@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
+import { motion } from "framer-motion"
+
 export default function SuccessToast({ setShowToast }) {
   return (
-    <>
-      <div
+    <div className="fixed bottom-0 w-full flex justify-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.75 }}
         id="toast-success"
         className="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow"
         role="alert"
@@ -19,7 +24,7 @@ export default function SuccessToast({ setShowToast }) {
           </svg>
           <span className="sr-only">Check icon</span>
         </div>
-        <div className="ms-3 text-sm font-normal">Successfully send message.</div>
+        <div className="ms-3 text-sm font-normal">Successfully sent message.</div>
         <button
           type="button"
           className="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8"
@@ -44,7 +49,7 @@ export default function SuccessToast({ setShowToast }) {
             />
           </svg>
         </button>
-      </div>
-    </>
+      </motion.div>
+    </div>
   );
 }

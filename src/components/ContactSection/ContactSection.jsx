@@ -1,22 +1,36 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { CiLinkedin } from "react-icons/ci";
 import { MdOutlineContentPaste, MdOutlineEmail, MdOutlinePhone, MdOutlineSubject } from "react-icons/md";
+import { createMessage } from "../../services/message.service";
+import { useState } from "react";
+import SuccessToast from "../SuccessToast/SuccessToast";
 
 export default function ContactSection() {
+    const [showToast, setShowToast] = useState(false);
+
+    const mutation = useMutation({
+        mutationFn: (data) => createMessage(data)
+    })
+
     const { 
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        reset
     } = useForm();
 
     const onSend = async (data) => {
-        console.log(data)
+        mutation.mutate(data);
+        reset();
+        setShowToast(true);
     }
 
     return (
         <>
+            {showToast && <SuccessToast setShowToast={setShowToast}/>}
             <section id="contact" className="w-full flex flex-col-reverse sm:flex-row mt-10 sm:mt-24 mb-8">
                 <motion.div 
                     initial={{ opacity: 0, x: -100 }}
@@ -106,9 +120,10 @@ export default function ContactSection() {
                                 </p>
                             )}
                         </div>
-                        <button className="w-full flex justify-center items-center py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
+                        <button disabled={mutation.isPending} className="w-full flex justify-center items-center py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:bg-blue-300">
                             Submit
                         </button>
+                        {mutation.isError && <p className="mt-1 text-red-600 text-center">Error: Could not send message</p>}
                     </form>
                 </motion.div>
                 <motion.div 
