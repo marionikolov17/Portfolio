@@ -44,7 +44,7 @@ function App() {
     if (time > 600) return;
 
     if (time % 5 == 0 && time > 0 && time < 600) {
-      //mutate({ createdNotificationID, createdViewID, totalTime: time });
+      mutate({ createdNotificationID, createdViewID, totalTime: time });
     }
 
     return () => clearTimeout(timeoutID);
