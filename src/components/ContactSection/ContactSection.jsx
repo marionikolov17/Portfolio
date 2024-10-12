@@ -11,7 +11,9 @@ export default function ContactSection() {
         formState: { errors }
     } = useForm();
 
-    const onSend = async (data) => {}
+    const onSend = async (data) => {
+        console.log(data)
+    }
 
     return (
         <>
@@ -38,6 +40,11 @@ export default function ContactSection() {
                                 placeholder="e.g John Doe"
                                 className="w-full border-0 outline-none rounded-sm ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
                             />
+                            {errors.name && (
+                                <p className="text-red-600 text-sm mt-2">
+                                    {errors.name.message}
+                                </p>
+                            )}
                         </div>
                         <div className="mt-4 mb-6">
                             <label htmlFor="email" className="flex items-center font-medium mb-1">
@@ -46,36 +53,58 @@ export default function ContactSection() {
                             </label>
                             <input 
                                 type="email"
-                                {...register("email", { required: "This field is required" })} 
+                                {...register("email", { 
+                                    required: "This field is required",
+                                    pattern: {
+                                        value:
+                                        /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i,
+                                        message: "This field should be a valid email",
+                                    },
+                                })} 
                                 id="email"
                                 placeholder="johndoe@gmail.com"
                                 className="w-full border-0 outline-none rounded-sm ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
                             />
+                            {errors.email && (
+                                <p className="text-red-600 text-sm mt-2">
+                                    {errors.email.message}
+                                </p>
+                            )}
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="subject" className="flex items-center font-medium">
+                            <label htmlFor="title" className="flex items-center font-medium">
                                 Subject
                                 <MdOutlineSubject className="ms-2 text-xl"/>
                             </label>
                             <input 
                                 type="text"
                                 {...register("title", { required: "This field is required" })} 
-                                id="subject"
+                                id="title"
                                 placeholder="Job proporsal"
                                 className="w-full border-0 outline-none rounded-sm ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
                             />
+                            {errors.title && (
+                                <p className="text-red-600 text-sm mt-2">
+                                    {errors.title.message}
+                                </p>
+                            )}
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="content" className="flex items-center font-medium">
+                            <label htmlFor="message" className="flex items-center font-medium">
                                 Content
                                 <MdOutlineContentPaste className="ms-2 text-xl"/>
                             </label>
                             <textarea 
                                 {...register("message", { required: "This field is required" })} 
-                                id="content"
+                                id="message"
                                 placeholder="Type..."
                                 className="w-full min-h-32 border-0 rounded-sm outline-none ring-gray-300 px-2 py-1.5 ring-1 shadow-sm sm:leading-6 focus:ring-2 focus:ring-green-500 transition duration-300 placeholder:text-gray-400"
                             ></textarea>
+                            {errors.message && (
+                                <p className="text-red-600 text-sm">
+                                    {errors.message.message}
+                                </p>
+                            )}
                         </div>
                         <button className="w-full flex justify-center items-center py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
                             Submit
