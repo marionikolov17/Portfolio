@@ -56,7 +56,7 @@ export default function HeroSection() {
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ duration: 0.75 }}
-                                src="/images/mario-2.png" 
+                                src="/images/mario-min.png" 
                                 alt="" 
                                 className="scale-75" 
                             />
