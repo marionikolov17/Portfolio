@@ -12,7 +12,6 @@ import Testimonials from "./components/Testimonials/Testimonials";
 import { useInitVisit } from "./hooks/useInitVisit";
 import { useMutation } from "@tanstack/react-query";
 import { createClickRecord, updateRecords } from "./services/reports.service";
-import RedirectLoader from "./shared/components/RedirectLoader/RedirectLoader";
 import { useRedirect } from "./context/redirect.context";
 
 function App() {
