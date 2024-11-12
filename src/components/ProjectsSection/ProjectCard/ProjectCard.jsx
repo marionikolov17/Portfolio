@@ -5,10 +5,14 @@ import { MdOutlineWebhook } from "react-icons/md";
 import { motion } from "framer-motion";
 import DetailCard from "./DetailCard/DetailCard";
 import Toast from "../../Toast/Toast";
+import { useRedirect } from "../../../context/redirect.context";
 
 export default function ProjectCard({ project, handleClickNotification }) {
     const [isDetailsOpened, setIsDetailsOpened] = useState(false);
     const [message, setMessage] = useState("")
+
+    // Redirect state
+    const { setRedirectUrl } = useRedirect();
 
     const openDetails = () => {
         handleClickNotification(`clicked on "${project.name}"`);
@@ -22,7 +26,8 @@ export default function ProjectCard({ project, handleClickNotification }) {
             return setMessage("This is private repository.")
         }
         // Add loading window till sent request
-        window.location = project.githubUrl;
+        setRedirectUrl(project.githubUrl);
+        handleClickNotification(`Github - ${project.name}`);
     }
 
     const goToDemo = () => {
@@ -30,7 +35,8 @@ export default function ProjectCard({ project, handleClickNotification }) {
             return setMessage("This project is not deployed, yet.")
         }
         // Add loading window till sent request
-        window.location = project.demoUrl;
+        setRedirectUrl(project.demoUrl);
+        handleClickNotification(`Demo - ${project.name}`);
     }
 
     return (

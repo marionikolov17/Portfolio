@@ -11,14 +11,12 @@ export function useRedirect() {
 export default function RedirectContextProvider({ children }) {
     const [isRedirecting, setIsRedirecting] = useState(false);
     const [redirectUrl, setRedirectUrl] = useState("");
-    const [isRequestReady, setIsRequestReady] = useState(false);
 
     return (
         <RedirectContext.Provider
             value={{
                 isRedirecting, setIsRedirecting,
                 redirectUrl, setRedirectUrl,
-                isRequestReady, setIsRequestReady
             }}
         >
             {isRedirecting ?
