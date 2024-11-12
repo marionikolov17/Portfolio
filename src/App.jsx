@@ -79,7 +79,7 @@ function App() {
         </div>
         <DesktopNavigation handleClickNotification={handleClickNotification}/>
         <MobileNavigation handleClickNotification={handleClickNotification}/>
-        <HeroSection />
+        <HeroSection handleClickNotification={handleClickNotification}/>
         <AboutSection />
         <ProjectsSection handleClickNotification={handleClickNotification}/>
         <Testimonials />
