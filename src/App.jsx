@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials/Testimonials";
 import { useInitVisit } from "./hooks/useInitVisit";
 import { useMutation } from "@tanstack/react-query";
 import { createClickRecord, updateRecords } from "./services/reports.service";
+import { useRedirect } from "./context/redirect.context";
 
 function App() {
   const [fetchedData, setFetchedData] = useState();
@@ -19,8 +20,19 @@ function App() {
   const [createdViewID, setCreatedViewID] = useState();
   const [time, setTime] = useState(0);
 
+  // Redirection State
+  const { isRedirecting, setIsRedirecting, redirectUrl } = useRedirect();
+
   const clickMutation = useMutation({
-    mutationFn: (data) => createClickRecord(data)
+    mutationFn: (data) => createClickRecord(data),
+    onMutate: () => {
+      if (redirectUrl !== "") setIsRedirecting(true);
+    },
+    onSettled: () => {
+      if (redirectUrl !== "") {
+        window.location = redirectUrl;
+      }
+    },
   });
 
   const handleClickNotification = (message) => {
@@ -52,7 +64,7 @@ function App() {
 
   return (
     <>
-      <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden">
+      <main className={`w-full absolute min-h-full font-montserrat overflow-x-hidden ${isRedirecting && "blur-lg"}`}>
         <div className="w-full py-2 flex justify-center items-center bg-black">
           <p className="text-white text-sm">
             Managed by{" "}
@@ -66,7 +78,7 @@ function App() {
         </div>
         <DesktopNavigation handleClickNotification={handleClickNotification}/>
         <MobileNavigation handleClickNotification={handleClickNotification}/>
-        <HeroSection />
+        <HeroSection handleClickNotification={handleClickNotification}/>
         <AboutSection />
         <ProjectsSection handleClickNotification={handleClickNotification}/>
         <Testimonials />

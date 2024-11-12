@@ -126,6 +126,10 @@
     background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
     background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   }
+
+  .redirect-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 @layer components {

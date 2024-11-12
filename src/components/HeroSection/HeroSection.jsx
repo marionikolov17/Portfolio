@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import { FaAngular, FaLinkedin, FaNode } from "react-icons/fa";
@@ -5,12 +6,15 @@ import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { SiExpress, SiReact, SiRedux, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useRedirect } from "../../context/redirect.context";
 
-export default function HeroSection() {
+export default function HeroSection({ handleClickNotification }) {
     const [title, setTitle] = useState("");
     const [isCompleted, setIsCompleted] = useState(false);
     const [isWaiting, setIsWaiting] = useState(false);
     const [index, setIndex] = useState(0);
+
+    const { setRedirectUrl } = useRedirect();
 
     useEffect(() => {
         const finalTitle = "Hi, I'm Mario Nikolov";
@@ -44,7 +48,22 @@ export default function HeroSection() {
             clearTimeout(timeout)
             clearTimeout(waitTiemout)
         }
-    }, [index, isCompleted, isWaiting])
+    }, [index, isCompleted, isWaiting]);
+
+    const goToGithub = () => {
+        setRedirectUrl("https://github.com/marionikolov17");
+        handleClickNotification(`clicked on Github`);
+    }
+
+    const goToLinkedIn = () => {
+        setRedirectUrl("https://github.com/marionikolov17");
+        handleClickNotification(`clicked on LinkedIn`);
+    }
+
+    const goToInstagram = () => {
+        setRedirectUrl("https://github.com/marionikolov17");
+        handleClickNotification(`clicked on Instagram`);
+    }
 
     return (
         <>
@@ -84,9 +103,9 @@ export default function HeroSection() {
                             <SiTailwindcss className="text-3xl sm:text-4xl text-[#06b6d4] me-6"/>
                         </div>
                         <div className="flex mt-12 justify-center lg:justify-start">
-                            <a href="https://www.linkedin.com/in/marionikolovdev/" className="text-2xl me-4"><FaLinkedin /></a>
-                            <a href="https://github.com/marionikolov17" className="text-2xl me-4"><FaGithub /></a>
-                            <a href="https://www.instagram.com/marionikolov17" className="text-2xl me-4"><FaInstagram /></a>
+                            <button onClick={goToLinkedIn} className="text-2xl me-4"><FaLinkedin /></button>
+                            <button onClick={goToGithub} className="text-2xl me-4"><FaGithub /></button>
+                            <button onClick={goToInstagram} className="text-2xl me-4"><FaInstagram /></button>
                         </div>
                     </motion.div>
                 </div>

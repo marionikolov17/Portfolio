@@ -12,7 +12,7 @@ export default function Comment({ likes, shares, time, children }) {
         className="mt-2 flex w-full py-2 px-4"
       >
         <div className="w-12 h-12 shrink-0 border shadow-sm flex justify-center rounded-full overflow-hidden">
-          <img src="/images/mario-2.png" className="object-cover" alt="" />
+          <img src="/images/mario-min.png" className="object-cover" alt="" />
         </div>
         <div className="grow shrink ms-4">
           <h3 className="text-sm sm:text-base font-bold">

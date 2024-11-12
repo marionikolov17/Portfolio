@@ -5,10 +5,14 @@ import { MdOutlineWebhook } from "react-icons/md";
 import { motion } from "framer-motion";
 import DetailCard from "./DetailCard/DetailCard";
 import Toast from "../../Toast/Toast";
+import { useRedirect } from "../../../context/redirect.context";
 
 export default function ProjectCard({ project, handleClickNotification }) {
     const [isDetailsOpened, setIsDetailsOpened] = useState(false);
     const [message, setMessage] = useState("")
+
+    // Redirect state
+    const { setRedirectUrl } = useRedirect();
 
     const openDetails = () => {
         handleClickNotification(`clicked on "${project.name}"`);
@@ -21,20 +25,24 @@ export default function ProjectCard({ project, handleClickNotification }) {
         if (project.githubUrl == "") {
             return setMessage("This is private repository.")
         }
-        window.location = project.githubUrl;
+        // Add loading window till sent request
+        setRedirectUrl(project.githubUrl);
+        handleClickNotification(`Github - ${project.name}`);
     }
 
     const goToDemo = () => {
         if (project.demoUrl == "") {
             return setMessage("This project is not deployed, yet.")
         }
-        window.location = project.demoUrl;
+        // Add loading window till sent request
+        setRedirectUrl(project.demoUrl);
+        handleClickNotification(`Demo - ${project.name}`);
     }
 
     return (
         <>
             <Toast message={message} setMessage={setMessage}/>
-            {isDetailsOpened && <DetailCard project={project} closeDetails={closeDetails}/>}
+            {isDetailsOpened && <DetailCard project={project} closeDetails={closeDetails} handleClickNotification={handleClickNotification}/>}
             {!isDetailsOpened && 
             <motion.div 
                 initial={{ opacity: 0, y: 75 }}
