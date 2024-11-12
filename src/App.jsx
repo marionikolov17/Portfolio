@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials/Testimonials";
 import { useInitVisit } from "./hooks/useInitVisit";
 import { useMutation } from "@tanstack/react-query";
 import { createClickRecord, updateRecords } from "./services/reports.service";
+import RedirectLoader from "./shared/components/RedirectLoader/RedirectLoader";
 
 function App() {
   const [fetchedData, setFetchedData] = useState();
@@ -52,7 +53,8 @@ function App() {
 
   return (
     <>
-      <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden">
+        <RedirectLoader />
+      <main className="w-full absolute min-h-full font-montserrat overflow-x-hidden blur-lg">
         <div className="w-full py-2 flex justify-center items-center bg-black">
           <p className="text-white text-sm">
             Managed by{" "}
