@@ -42,7 +42,7 @@ export default function ProjectCard({ project, handleClickNotification }) {
     return (
         <>
             <Toast message={message} setMessage={setMessage}/>
-            {isDetailsOpened && <DetailCard project={project} closeDetails={closeDetails}/>}
+            {isDetailsOpened && <DetailCard project={project} closeDetails={closeDetails} handleClickNotification={handleClickNotification}/>}
             {!isDetailsOpened && 
             <motion.div 
                 initial={{ opacity: 0, y: 75 }}

@@ -27,7 +27,7 @@ function App() {
   const clickMutation = useMutation({
     mutationFn: (data) => createClickRecord(data),
     onMutate: () => {
-      setIsRedirecting(true);
+      if (redirectUrl !== "") setIsRedirecting(true);
     },
     onSettled: () => {
       if (redirectUrl !== "") {

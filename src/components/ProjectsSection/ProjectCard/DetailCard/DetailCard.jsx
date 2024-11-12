@@ -9,11 +9,15 @@ import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { MdClose, MdDone, MdOutlineWebhook } from "react-icons/md";
 import { icons } from "../../../../data/icons";
 import Toast from "../../../Toast/Toast";
+import { useRedirect } from "../../../../context/redirect.context";
 
-export default function DetailCard({ project, closeDetails }) {
+export default function DetailCard({ project, closeDetails, handleClickNotification }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [message, setMessage] = useState("");
   const [isImageOpened, setIsImageOpened] = useState(false);
+
+  // Redirect state
+  const { setRedirectUrl } = useRedirect();
 
   const goPreviousImage = () => {
     if (currentImageIndex == 0) {
@@ -37,17 +41,21 @@ export default function DetailCard({ project, closeDetails }) {
 
   const goToGithub = () => {
     if (project.githubUrl == "") {
-      return setMessage("This is private repository.");
+        return setMessage("This is private repository.")
     }
-    window.location = project.githubUrl;
-  };
+    // Add loading window till sent request
+    setRedirectUrl(project.githubUrl);
+    handleClickNotification(`Github - ${project.name}`);
+}
 
-  const goToDemo = () => {
-    if (project.demoUrl == "") {
-      return setMessage("This project is not deployed, yet.");
-    }
-    window.location = project.demoUrl;
-  };
+const goToDemo = () => {
+  if (project.demoUrl == "") {
+      return setMessage("This project is not deployed, yet.")
+  }
+  // Add loading window till sent request
+  setRedirectUrl(project.demoUrl);
+  handleClickNotification(`Demo - ${project.name}`);
+}
 
   return (
     <>
