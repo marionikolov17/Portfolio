@@ -6,6 +6,7 @@ import {
 import { databases, ID } from "../lib/appwrite";
 
 export const reportInitVisit = async (data) => {
+  if (data.ip === "212.36.17.234") return;
   // Create record in views database
   const createdViewsRecord = await databases.createDocument(
     DATABASE_ID,
@@ -32,6 +33,7 @@ export const reportInitVisit = async (data) => {
 };
 
 export const updateRecords = async (data) => {
+  if (data.ip === "212.36.17.234") return;
   //console.log(data.createdNotificationID, data.createdViewID, data.totalTime)
   const resOne = await databases.updateDocument(
     DATABASE_ID,

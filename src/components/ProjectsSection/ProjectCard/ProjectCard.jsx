@@ -21,6 +21,7 @@ export default function ProjectCard({ project, handleClickNotification }) {
         if (project.githubUrl == "") {
             return setMessage("This is private repository.")
         }
+        // Add loading window till sent request
         window.location = project.githubUrl;
     }
 
@@ -28,6 +29,7 @@ export default function ProjectCard({ project, handleClickNotification }) {
         if (project.demoUrl == "") {
             return setMessage("This project is not deployed, yet.")
         }
+        // Add loading window till sent request
         window.location = project.demoUrl;
     }
 
